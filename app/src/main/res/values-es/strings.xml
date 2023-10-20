@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RethinkDNS</string>
+    <string name="app_name_small_case">rethink</string>
+    <string name="fapps_unmetered_block_dialog_message">¿Bloquear las conexiones en la red sin límites (WiFi) para las aplicaciones en la <i>lista</i>\?</string>
+    <string name="unicode_question_sign">❔</string>
+    <string name="network_log_app_name_unnamed">Sin nombre (%1$s)</string>
+    <string name="dns_proxy_connection_failure_lockdown">La exclusión de %1$s para %2$s en modo de aislamiento puede causar problemas de conectividad a Internet.</string>
+    <string name="hs_btm_sheet_lock_down">No se puede cambiar de modo cuando la VPN está en <i>aislamiento</i>. Pulse para <u>editar los ajustes de la VPN</u>.</string>
+    <string name="firewall_rule_isolate">Aislamiento</string>
+    <string name="firewall_rule_block_udp_ntp_desc">Una regla del cortafuegos activada por el usuario bloqueó esta conexión <i>UDP</i>.<br/><br/> Para cambiarla, vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_bypass_universal_ip">IP omitida</string>
+    <string name="about_website_link">https://www.rethinkdns.com/</string>
+    <string name="about_docs_link">https://docs.rethinkdns.com/</string>
+    <string name="about_faq_link">https://www.rethinkdns.com/faq</string>
+    <string name="about_mozilla_alumni_link">https://builders.mozilla.community/alumni.html</string>
+    <string name="about_dialog_neutral_button">Sugerir características</string>
+    <string name="about_mail_bugreport_subject">[Rethink]: Informe de errores</string>
+    <string name="about_mail_bugreport_share_title">Seleccione el proveedor de correo electrónico</string>
+    <string name="about_twitter_handle">https://twitter.com/rethinkdns</string>
+    <string name="about_privacy_policy_link">https://www.rethinkdns.com/privacy</string>
+    <string name="about_version">v%1$s</string>
+    <string name="cd_dns_proxy_error_text_2">El rango de puertos debe ser de 1024 a 65535</string>
+    <string name="cd_custom_dns_proxy_default_app">Ninguno</string>
+    <string name="cd_custom_dns_proxy_default_ip">127.0.0.1</string>
+    <string name="cd_dns_proxy_mode_internal">Interno</string>
+    <string name="cd_dns_proxy_error_text_3">Puerto no válido</string>
+    <string name="cd_dns_crypt_dialog_desc">Descripción (opcional)</string>
+    <string name="cd_dns_crypt_relay_name">Repetidor DNS %1$s</string>
+    <string name="cd_dnscrypt_relay_heading">Repetidores</string>
+    <string name="univ_ip_delete_toast_success">Se han borrado todas las reglas IP.</string>
+    <string name="dns_proxy_desc">%1$s:%2$s, %3$s</string>
+    <string name="dns_proxy_dialog_message_no_app">Dirección IP: %1$s
+\n
+\nNúmero de puerto: %2$s</string>
+    <string name="dns_proxy_dialog_header_dns">Añadir proxy DNS</string>
+    <string name="cd_toast_added">Dominio añadido con éxito</string>
+    <string name="whats_new_version_update">&lt;b&gt;Jason A. Donenfeld&lt;/b&gt;&lt;br/&gt;&lt;br/&gt; 1. &lt;i&gt;Nueva función&lt;/i&gt;: Soporte Multi-VPN con cualquier número de conexiones simultáneas WireGuard.&lt;br/&gt; 2. &lt;i &gt;Nueva función&lt;/i&gt;: indicador de conexión activa (abierta) en los registros de red.&lt;/br&gt; 3. &lt;i&gt;Nueva función&lt;/i&gt;: restringir Tor-como-un-proxy (Orbot) a aplicaciones específicas.&lt; br/&gt; 4. &lt;i&gt;Nueva función&lt;/i&gt;: Las estadísticas muestran ahora agrupaciones basadas en Geolocalización IP.&lt;br/&gt; 5. &lt;i&gt;Nueva función&lt;/i&gt;: Mostrar el uso de datos en los registros de red: bytes de carga y descarga por solicitud.&lt;br/&gt; 6. &lt;i&gt;Nueva función&lt;/i&gt;: Estadísticas de carga y descarga por aplicación.&lt;br/&gt; 7. &lt;i&gt;Nueva función&lt;/i&gt;: Compatibilidad con servidores locales DNS sobre HTTPS (no públicos).&lt;br/&gt; 8. Informes de errores a la carta superdetallados para un mejor diagnóstico.&lt;br/&gt; 9. Refuerzo DNS está ahora activado por defecto.&lt;br/&gt; 10. Mejora de la interfaz para gestionar las reglas de IP y dominio por aplicación.&lt;br/&gt; 11. Mosaicos más grandes en la pantalla de inicio.&lt;br/&gt; 12. Actualización de la interfaz del cortafuegos.&lt; br/&gt; 13. &lt;i&gt;Corrección de errores&lt;/i&gt;: Hacer que HTTP Proxy funcione para túneles CONECTADOS.&lt;br/&gt; 14. &lt;i&gt;Corrección de errores&lt;/i&gt;: Los dominios de confianza (permitir listas) funcionan ahora con los servidores DNS de terceros.&lt;br/&gt;&lt;br/&gt; &lt;a href=https://svc.rethinkdns.com/r/translate&gt;Ayuda a traducir esta aplicación&lt;/a&gt;</string>
+    <string name="dc_dns_leaks_desc">Cuando está activado, Rethink captura todos los paquetes en el puerto 53 y los reenvía a un punto de acceso DNS establecido por el usuario</string>
+    <string name="about_settings_app_info">Información de la aplicación</string>
+    <string name="settings_orbot_disabled_error">Desactive el proxy HTTP(S) y/o SOCKS5 para continuar con la configuración de Tor-como-un-proxy.</string>
+    <string name="about_settings_vpn_profile">Perfil de la VPN</string>
+    <string name="about_translate_link">https://svc.rethinkdns.com/r/translate</string>
+    <string name="always_on_dialog_heading">Desactivar la VPN siempre activa</string>
+    <string name="always_on_dialog_stop_heading">VPN siempre activa</string>
+    <string name="always_on_dialog_lockdown_stop_message">Rethink está ejecutando la VPN en modo <i>Aislamiento</i>. Detenerlo provocaría la pérdida de conectividad a Internet en este perfil de usuario. ¿Desea continuar de todas formas\?</string>
+    <string name="firewall_act_universal_tab">universal</string>
+    <string name="always_on_dialog_neutral">Ajustes</string>
+    <string name="univ_firewall_dialog_title">¿Borrar la regla IP\?</string>
+    <string name="doh_custom_url_remove_dialog_title">¿Borrar el Punto de acceso DoH\?</string>
+    <string name="doh_custom_url_remove_success">Punto de acceso borrado.</string>
+    <string name="dns_crypt_custom_url_remove_dialog_title">¿Borrar el servidor de resoluciones DNSCrypt\?</string>
+    <string name="dns_crypt_relay_remove_dialog_message">Borra el repetidor DNSCrypt de la configuración guardada.</string>
+    <string name="refresh_complete">Resincronización de la lista de aplicaciones completada.</string>
+    <string name="download_update_dialog_title">¡Nueva actualización!</string>
+    <string name="download_update_dialog_trylater_title">No se puede actualizar ahora</string>
+    <string name="download_update_dialog_failure_title">¡Se ha producido un problema!</string>
+    <string name="download_update_dialog_message_ok_title">¡Al día!</string>
+    <string name="download_update_dialog_message_ok">Ya está en la última versión.</string>
+    <string name="download_update_dialog_message_success">Descarga exitosa de la lista de bloqueo.</string>
+    <string name="search_dns_logs"><font size="12">Buscar nombres de dominio o IPs</font></string>
+    <string name="search_firewall_all_apps"><font size="12">Buscar aplicaciones por UID, nombre</font></string>
+    <string name="app_mode_dns_firewall">DNS y Cortafuegos (por defecto)</string>
+    <string name="app_mode_firewall">Cortafuegos</string>
+    <string name="settings_app_notification_a13_heading">Notificación de la aplicación</string>
+    <string name="connection_http3">HTTP3</string>
+    <string name="relative_time_today">Hoy</string>
+    <string name="relative_time_yesterday">Ayer</string>
+    <string name="settings_http_proxy_desc">Reenviando a %1$s</string>
+    <string name="settings_http_proxy_dialog_title">URL personalizada del servidor</string>
+    <string name="settings_http_proxy_error_text1">El rango de puertos debe ser desde 1024 a 65535</string>
+    <string name="settings_http_proxy_error_text2">Puerto no válido</string>
+    <string name="settings_http_proxy_toast_success">El proxy HTTP está configurado</string>
+    <string name="settings_dns_proxy_dialog_header">Configurar el proxy SOCKS5</string>
+    <string name="settings_dns_proxy_dialog_hostname">Nombre de servidor</string>
+    <string name="settings_dns_proxy_dialog_port_number">Número de puerto</string>
+    <string name="settings_dns_proxy_dialog_username">Usuario</string>
+    <string name="settings_dns_proxy_dialog_password">Contraseña</string>
+    <string name="settings_dns_proxy_dialog_positive_btn">configurar</string>
+    <string name="settings_socks5_dialog_hint_port">Puerto</string>
+    <string name="settings_ip_dialog_ipv46">Auto (experimental)
+\nse envían comprobaciones de conectividad para determinar la accesibilidad.</string>
+    <string name="settings_ip_text_ipv4">IPv4</string>
+    <string name="settings_ip_text_ipv46">Automático</string>
+    <string name="settings_theme_dialog_themes_4">Negro</string>
+    <string name="settings_ip_dialog_title">Elija la versión de IP</string>
+    <string name="settings_ip_dialog_ipv4">IPv4 (por defecto)</string>
+    <string name="settings_ip_text_ipv6">IPv6</string>
+    <string name="settings_notification_desc2">DNS / DNS + Cortafuegos</string>
+    <string name="settings_selected_ip_desc">%1$s</string>
+    <string name="settings_notification_heading">Elija la acción de notificación</string>
+    <string name="settings_notification_desc">Botones de acción para mostrar con la notificación de Rethink: %1$s</string>
+    <string name="firewall_status_whitelisted">omite las reglas universales del cortafuegos</string>
+    <string name="firewall_status_isolate">aislada</string>
+    <string name="settings_protocol_translation_dns_inactive">Cambie al modo DNS/DNS+Cortafuegos para activar esta configuración</string>
+    <string name="apps_icon_content_desc">Icono de la aplicación</string>
+    <string name="firewall_status_excluded">excluido de dns y cortafuegos</string>
+    <string name="firewall_status_allow">permitidas</string>
+    <string name="firewall_status_block_unmetered">bloqueado en redes sin límites (wifi)</string>
+    <string name="firewall_status_block_metered">bloqueado en redes con límites (móvil)</string>
+    <string name="firewall_status_unknown">desconocido</string>
+    <string name="ct_bs_app_info_error">Información de la aplicación no encontrada</string>
+    <string name="hsf_vpn_dialog_message">Rethink necesita permiso para configurar una VPN local para cifrar las solicitudes de DNS del dispositivo, implementar un monitor de red y aplicar las reglas del cortafuegos.
+\n
+\nRethink no recoge ninguna información ni le espía de ninguna manera.</string>
+    <string name="dc_local_block_heading">Listas de bloqueo en el dispositivo</string>
+    <string name="dc_local_block_desc_1">Elija entre más de 195 listas de bloqueo. Pulse aquí para descargar o configurar las listas de bloqueo.</string>
+    <string name="dc_custom_block_heading">Reglas de dominio</string>
+    <string name="dc_check_update_heading">Aviso sobre las actualizaciones de la lista de bloqueo</string>
+    <string name="about_bravedns_whoarewe">Rethink es un proyecto gratuito y de código abierto, dirigido por ex-ingenieros de Amazon, IBM y Scientific Games.</string>
+    <string name="about_bravedns_toreport_text">ayuda y comentarios</string>
+    <string name="about_bug_report_desc">Registros de fallos del correo electrónico</string>
+    <string name="about_bravedns_explantion">Rethink es la forma más sencilla de supervisar la actividad de las aplicaciones, eludir la censura en Internet y utilizar cortafuegos en su dispositivo Android.</string>
+    <string name="about_bug_no_log_dialog_message">No se han podido obtener los registros de fallos. ¿Quiere informar manualmente de su error\?</string>
+    <string name="about_privacy_policy">Normativa de privacidad</string>
+    <string name="about_connect">contacto</string>
+    <string name="contributors_dialog_title">Autores</string>
+    <string name="accessibility_service_description">Rethink utiliza el servicio de accesibilidad para detectar y bloquear aplicaciones en segundo plano. Rethink no recopila ni vende ninguna información.</string>
+    <string name="finish">Finalizar</string>
+    <string name="slide_2_desc">Rethink es la forma más fácil de supervisar la actividad de la red, evitar la censura de Internet y controlar las aplicaciones de su dispositivo Android.</string>
+    <string name="slide_1_title">Código libre y abierto</string>
+    <string name="rethink_plus">RethinkDNS Plus</string>
+    <string name="rdns_plus">RDNS Plus</string>
+    <string name="allow">permitir</string>
+    <string name="block">bloquear</string>
+    <string name="exclude">excluir</string>
+    <string name="notification_content" description="Indicates what will happen if the user taps the notification.">Pulse para cambiar los ajustes de la protección</string>
+    <string name="dns_mode_notification_title">¡Protegido! Conectado a un DNS rápido y seguro.</string>
+    <string name="pause_mode_notification_title">¡Pausado! Las aplicaciones bloqueadas seguirán siendo controladas.</string>
+    <string name="status_waiting" description="This text appears during the connection process if Intra needs user permission or the phone is offline.">esperando</string>
+    <string name="status_dns_server_down">servidor dns caído</string>
+    <string name="status_no_internet">sin internet</string>
+    <string name="untracked">no rastreado</string>
+    <string name="bypass_universal">omisión universal</string>
+    <string name="isolate">aislamiento</string>
+    <string name="status_protected_with_tor_private_dns">protegido con tor y dns privado</string>
+    <string name="status_protected_with_private_dns">protegido con dns privado</string>
+    <string name="status_protected_with_proxy_private_dns">protegido con proxy y dns privado</string>
+    <string name="status_protected_with_socks5_private_dns">protegido con socks5 y dns privado</string>
+    <string name="status_protected_with_http_private_dns">protegido con proxy http y dns privado</string>
+    <string name="status_protected_with_socks5">protegido con proxy socks</string>
+    <string name="status_protected_with_http">protegido con proxy http</string>
+    <string name="status_protected_with_proxy">protegido con proxy</string>
+    <string name="status_strict" description="This is similar to dns_on, but the protection is being provided by the operating system, not by Rethink.  It is not color-highlighted.">el dns privado está activado</string>
+    <string name="status_exposed" description="This is a large message in a scary color.  It indicates that DNS queries can be surveilled or modified in transit.">no protegido</string>
+    <string name="dns_explanation_dns_connected">Conectado a RethinkDNS</string>
+    <string name="dns_explanation_connected" description="The message will be shown when the DNS is connected">Conectado a RethinkDNS y al cortafuegos</string>
+    <string name="dns_explanation_firewall_connected">Conectado al cortafuegos</string>
+    <string name="universal_firewall_explanation">Aplique reglas de cortafuegos en todas las aplicaciones en función de los eventos del dispositivo, p.ej., bloqueándolas cuando el dispositivo está bloqueado o cuando una determinada aplicación no está en uso.</string>
+    <string name="notification_action_resume_vpn">REANUDAR</string>
+    <string name="notification_action_pause_vpn">PAUSAR</string>
+    <string name="notification_action_stop_vpn">DETENER</string>
+    <string name="notification_action_dns_mode">DNS</string>
+    <string name="notification_action_dns_firewall_mode">DNS + Cortafuegos</string>
+    <string name="dns_mode_info_title">DNS</string>
+    <string name="firewall_rules">Reglas de la red</string>
+    <string name="firewall_mode_info_title">Cortafuegos</string>
+    <string name="firewall_mode_info_explanation_new">Supervisa la actividad de la red y controla cualquier aplicación o dirección IP.</string>
+    <string name="apps_info_title">Aplicaciones</string>
+    <string name="hybrid_mode_info_title">DNS + Cortafuegos</string>
+    <string name="dns_mode_info_explanation_new">Supervisa, bloquea y cifra las solicitudes DNS.</string>
+    <string name="dns_firewall_mode_info_explanation_new">Todo lo anterior + eludir la censura de Internet.</string>
+    <string name="alert_permission_accessibility">Permisos - Accesibilidad</string>
+    <string name="brave_dns_connect_mode_change_firewall">Elija el modo.</string>
+    <string name="brave_dns_connect_mode_change_dns">Elija el modo.</string>
+    <string name="default_dns_name">RDNS por defecto</string>
+    <string name="custom_url_error_invalid_url">URL no válida</string>
+    <string name="conn_track_clear_logs_title">¿Borrar todos los registros de la red\?</string>
+    <string name="conn_track_clear_logs_message">Esto sólo borra los registros de red pero no las reglas del cortafuegos. Esta operación no es reversible. ¿Desea continuar\?</string>
+    <string name="dns_query_clear_logs_message">Esto borra los registros de DNS en el dispositivo. Esta operación no es reversible. ¿Desea continuar\?</string>
+    <string name="dns_query_clear_logs_title">¿Borrar todos los registros de DNS\?</string>
+    <string name="bsct_app_info">Información sobre la app</string>
+    <string name="cd_dns_crypt_title">servidor de resoluciones</string>
+    <string name="cd_custom_doh_url_name_default">DoH</string>
+    <string name="cd_custom_doh_url_name">DoH %1$s</string>
+    <string name="cd_custom_dns_proxy_name_default">Proxy</string>
+    <string name="cd_custom_doh_dialog_title">URL personalizada del servidor</string>
+    <string name="cd_dns_crypt_dialog_title">Añade un servidor de resoluciones o repetidor DNSCrypt</string>
+    <string name="cd_dns_crypt_name_default">DNSCrypt</string>
+    <string name="cd_dns_crypt_resolver_heading">Servidor de resoluciones</string>
+    <string name="cd_dns_crypt_dialog_heading">Añadir el servidor de resoluciones o repetidor DNSCrypt</string>
+    <string name="cd_dns_crypt_dialog_name">Nombre</string>
+    <string name="cd_dns_crypt_relay_heading">Repetidor</string>
+    <string name="cd_doh_dialog_resolver_name">Nombre del servidor de resoluciones</string>
+    <string name="lbl_add">añadir</string>
+    <string name="cd_doh_dialog_heading">Añadir DNS sobre HTTPS</string>
+    <string name="cd_dns_crypt_error_text_1">El sello no puede estar vacío</string>
+    <string name="ct_ip_details">%1$s (%2$s)</string>
+    <string name="ct_ip_port">%1$s:%2$s</string>
+    <string name="ctbs_app_other_apps">%1$s + %2$s otra(s) aplicación(es)</string>
+    <string name="ctbs_app_info_not_available_toast">No se encontró la página de configuración de la aplicación</string>
+    <string name="ctbs_block_other_apps">Las normas aplicadas para %1$s también serán aplicables para %2$s u otras aplicaciones</string>
+    <string name="ctbs_dialog_negative_btn">Atrás</string>
+    <string name="dns_log_dialog_positive">Borrar registros</string>
+    <string name="dns_btm_sheet_dialog_ips"> <Data> %1$s %2$s &lt;br/&gt;</Data> </string>
+    <string name="dns_btm_sheet_chip">+%1$s Otras IPs</string>
+    <string name="dns_btm_sheet_chip_no_answer">Sin respuesta</string>
+    <string name="dns_btm_resolved_crypt">resuelto <u>anónimamente</u> %1$s por %2$s</string>
+    <string name="dns_btm_resolved_doh">resuelto %1$s por %2$s</string>
+    <string name="dns_btm_resolved_doh_no_server">resuelto %1$s</string>
+    <string name="hs_download_positive_default">aceptar</string>
+    <string name="hs_download_positive_play_store">Actualización completa</string>
+    <string name="hs_download_positive_website">Visitar sitio web</string>
+    <string name="hs_download_negative_default">Recordarme más tarde</string>
+    <string name="univ_firewall_rule_7">Bloqueo de IPv4 en IPv6 (en pruebas)</string>
+    <string name="univ_firewall_rule_3">Bloquear cuando la aplicación de origen es desconocida</string>
+    <string name="univ_firewall_rule_4">Bloquear UDP excepto DNS y NTP</string>
+    <string name="univ_firewall_rule_5">Bloquear cuando se omite el DNS</string>
+    <string name="univ_firewall_rule_8">Bloquear el tráfico del puerto 80 (HTTP inseguro)</string>
+    <string name="univ_firewall_rule_6">Bloquear por defecto las aplicaciones recién instaladas</string>
+    <string name="univ_firewall_rule_9">Bloquear en la red con límites (móvil)</string>
+    <string name="univ_firewall_rule_10">Bloquea todo excepto las aplicaciones e IPs que han sido omitidas</string>
+    <string name="univ_view_blocked_ip_desc">Modifica las reglas de Dominio, IP / Puerto bloqueadas o de confianza.</string>
+    <string name="univ_view_blocked_ip">Reglas de IP y puerto</string>
+    <string name="univ_ip_delete_individual_toast">%1$s borrado.</string>
+    <string name="univ_accessibility_dialog_positive">Conceder</string>
+    <string name="univ_accessibility_dialog_negative">Denegar</string>
+    <string name="dns_connected_no_count">Conectado</string>
+    <string name="univ_accessibility_crash_dialog_positive">Ir a Configuración</string>
+    <string name="dns_info_positive">Aceptar</string>
+    <string name="dns_info_neutral">Copiar</string>
+    <string name="dns_crypt_relay_error_toast">No seleccionó ningún servidor de resoluciones</string>
+    <string name="dns_proxy_desc_no_app">%1$s:%2$s</string>
+    <string name="dns_proxy_dialog_message">Nombre de la aplicación: %1$s
+\n
+\nDirección IP: %2$s
+\n
+\nNúmero de puerto: %3$s</string>
+    <string name="dns_query_latency">%1$sms</string>
+    <string name="dns_proxy_name">Nombre del Proxy</string>
+    <string name="dns_proxy_app">Aplicación</string>
+    <string name="dns_proxy_ip_address">Dirección IP</string>
+    <string name="dns_proxy_port">Número de puerto</string>
+    <string name="fapps_filter_clear_btn">Limpiar</string>
+    <string name="fapps_filter_parent_installed">Instalados</string>
+    <string name="fapps_filter_parent_system">Sistema</string>
+    <string name="fapps_firewall_filter_bypass_universal">Omitidas</string>
+    <string name="fapps_firewall_filter_isolate">Aisladas</string>
+    <string name="fapps_firewall_filter_excluded">Excluidas</string>
+    <string name="fapps_unmetered_unblock_dialog_title">Permitir en redes sin límites</string>
+    <string name="fapps_info_dialog_positive_btn">Bien</string>
+    <string name="fapps_unmetered_unblock_dialog_message">¿Permitir las conexiones en la red sin límites (WiFi) para las aplicaciones en la <i>lista</i>\?</string>
+    <string name="fapps_metered_block_dialog_title">Bloquear en redes con límites</string>
+    <string name="fapps_metered_unblock_dialog_title">Permitir en redes con límites</string>
+    <string name="fapps_metered_unblock_dialog_message">¿Permitir las conexiones en la red con límites (móvil) para las aplicaciones en la <i>lista</i>\?</string>
+    <string name="fapps_lockdown_hint">La VPN está en modo de aislamiento. El cortafuegos no respetará las reglas de “con límites/sin límites”.</string>
+    <string name="fapps_firewall_filter_desc">Mostrando aplicaciones <u>%1$s</u> %2$s</string>
+    <string name="fapps_firewall_filter_desc_category">Mostrando aplicaciones <u>%1$s</u> %2$s en las categorías: %3$s</string>
+    <string name="unicode_x_sign">❌</string>
+    <string name="unicode_warning_sign">⚠</string>
+    <string name="rules_load_failure_heading">Nota</string>
+    <string name="rules_load_failure_desc">No se han encontrado reglas de cortafuegos</string>
+    <string name="rules_load_failure_reload">recargar</string>
+    <string name="network_log_app_name_unknown">Desconocido</string>
+    <string name="dns_crypt_connection_failure">Error conectando al servidor DNSCrypt.</string>
+    <string name="dns_proxy_connection_failure">Error conectando al servidor proxy DNS.</string>
+    <string name="dns_proxy_toast_parameter">Proxy DNS</string>
+    <string name="socks5_proxy_toast_parameter">Proxy SOCKS5</string>
+    <string name="system_dns_connection_failure">No se puede determinar el servidor DNS actual</string>
+    <string name="settings_local_blocklist_version">Versión: %1$s</string>
+    <string name="copy_clipboard_label">URL</string>
+    <string name="update_complete_snack_message">Nueva versión descargada.</string>
+    <string name="update_complete_action_snack">REINICIAR</string>
+    <string name="settings_local_blocklist_in_use">%1$s listas de bloqueo en uso</string>
+    <string name="settings_local_blocklist_dialog_positive">Descargar</string>
+    <string name="accessibility_notification_content">El servicio de accesibilidad de Rethink se ha detenido o ha fallado. Ya no bloquea las aplicaciones en segundo plano. Pulse para volver a activarlo.</string>
+    <string name="accessibility_failure_toast">El servicio de accesibilidad de Rethink se ha detenido o ha fallado. Ya no se bloquean las aplicaciones en segundo plano.</string>
+    <string name="coming_soon_toast">próximamente</string>
+    <string name="pause_text">pausado</string>
+    <string name="pause_desc">Nota: %1$s de las aplicaciones bloqueadas seguirán siendo supervisadas por el cortafuegos.</string>
+    <string name="other_dns_list_tab1">DoH</string>
+    <string name="other_dns_list_tab2">Dnscrypt</string>
+    <string name="other_dns_list_tab3">Proxy Dns</string>
+    <string name="firewall_rule_no_rule">Ninguna regla</string>
+    <string name="firewall_rule_block_metered">Con límites (móvil)</string>
+    <string name="firewall_rule_block_ip">IP / Puerto (Aplicación)</string>
+    <string name="firewall_rule_block_app_new_install">Nueva aplicación</string>
+    <string name="firewall_rule_block_app_exception">Error</string>
+    <string name="firewall_rule_device_lock">Dispositivo bloqueado</string>
+    <string name="firewall_rule_block_dns_bypass">DNS omitido</string>
+    <string name="firewall_rule_foreground">Aplicación no utilizada</string>
+    <string name="firewall_rule_exempt_app_bypass_univ">Aplicación omitida</string>
+    <string name="firewall_rule_unknown">Fuente desconocida</string>
+    <string name="firewall_rule_block_udp_ntp">UDP bloqueado</string>
+    <string name="firewall_rule_exempt_dns_proxied">Proxy DNS</string>
+    <string name="firewall_rule_exempt_orbot_setup">Configuración de Orbot</string>
+    <string name="firewall_rule_block_http">HTTP inseguro</string>
+    <string name="firewall_rule_global_lockdown">Aislamiento</string>
+    <string name="firewall_rule_no_rule_desc">Ninguna regla del cortafuegos coincide con esta conexión.</string>
+    <string name="firewall_rule_block_app_desc">Una regla del cortafuegos activada por el usuario ha bloqueado esta aplicación <i/> .<br/><br/> Para cambiarla, vaya a la pestaña <i>Todas las aplicaciones</i>.</string>
+    <string name="firewall_rule_new_app_desc">Esta aplicación hizo la conexión la <i>primera vez</i>.<br/><br/> Para cambiar vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_block_app_unmetered_desc">Una regla del cortafuegos activada por el usuario ha bloqueado esta <i>aplicación</i> al intentar conectarse a la red <i>Sin límites</i>.<br/><br/> Para cambiarla, vaya a la pestaña <i>Todas las aplicaciones</i>.</string>
+    <string name="firewall_rule_block_app_mobile_desc">Una regla del cortafuegos activada por el usuario ha bloqueado esta <i>aplicación</i> al intentar conectarse a la red <i>Con límites</i>.<br/><br/> Para cambiarla, vaya a la pestaña <i>Todas las aplicaciones</i>.</string>
+    <string name="firewall_rule_isolate_desc">Una regla del cortafuegos activada por el usuario ha aislado esta <i>aplicación</i> que está conectando a otras <i>IPs omitidas</i>.<br/><br/> Para cambiarla, vaya a la pestaña <i>Todas las aplicaciones</i>.</string>
+    <string name="firewall_rule_block_ip_desc">Una regla del cortafuegos activada por el usuario ha bloqueado la <i>IP destino</i> .<br/><br/> Para cambiarla vaya a la pantalla <i>Cortafuegos específico de la aplicación</i>.</string>
+    <string name="firewall_rule_foreground_desc">Esta conexión estaba bloqueada porque la aplicación de origen <i>no esta en primer plano</i>.<br/><br/> Para cambiar este comportamiento vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_unknown_desc">Esta conexión fue bloqueada porque no se pudo determinar la <i>aplicación de origen</i>.<br/><br/> Para cambiar este comportamiento, vaya a la pestaña <i>Universal</i>.</string>
+    <string name="new_app_bulk_notification_content">Rethink bloqueó %1$s nuevas aplicaciones. Pulse para ver o modificar.</string>
+    <string name="new_app_notification_content">Rethink bloqueó la aplicación recientemente instalada, %1$s.</string>
+    <string name="notif_channel_vpn_failure">VPN inactiva</string>
+    <string name="notif_channel_vpn_notification">VPN activa</string>
+    <string name="new_app_notification_action_toast_deny">Conexión de red denegada para la aplicación</string>
+    <string name="notif_channel_desc_vpn_failure">Informar cuando Rethink es detenido por Android o por otra aplicación VPN</string>
+    <string name="notif_channel_desc_vpn_notification">Informar cuando Rethink está activo y funcionando en segundo plano</string>
+    <string name="notif_channed_desc_download">Alerta sobre el progreso de la descarga para las listas de bloqueo en el dispositivo</string>
+    <string name="category_name_sys_components">Componentes del sistema</string>
+    <string name="notif_channel_desc_firewall_alerts">Alerta sobre errores y anomalías del cortafuegos</string>
+    <string name="notif_channel_desc_proxy_failure">Alerta sobre errores y anomalías del proxy</string>
+    <string name="category_name_non_app_sys">Servicios del sistema</string>
+    <string name="build__flavor_website">sitio web</string>
+    <string name="category_name_others">Otros</string>
+    <string name="category_name_installed">Aplicaciones instaladas</string>
+    <string name="build__flavor_play_store">Play</string>
+    <string name="build__flavor_fdroid">fdroid</string>
+    <string name="cd_toast_deleted">Dominio eliminado de la lista personalizada</string>
+    <string name="ci_dialog_title">Añadir regla de IP/puerto</string>
+    <string name="ci_no_rule_initial">N</string>
+    <string name="ci_no_rule_txt">Ninguna regla</string>
+    <string name="ci_blocked_initial">B</string>
+    <string name="ci_no_rule">Ninguna regla</string>
+    <string name="ada_ip_no_connection">No hay registros de red para esta aplicación.</string>
+    <string name="ada_app_status_allow">se permite</string>
+    <string name="ada_app_status_block">está bloqueado</string>
+    <string name="ada_app_status_block_wifi">se bloquea en las redes sin límites (wifi)</string>
+    <string name="ada_firewall_status">Esta aplicación <b><i>%1$s</i> </b> .</string>
+    <string name="ada_ip_connection_count">Conectado a %1$s dirección(es) IP</string>
+    <string name="ada_ip_connection_count_zero">0 Dirección IP</string>
+    <string name="ada_app_status_block_md">se bloquea en las redes con límites (móvil)</string>
+    <string name="ada_app_status_whitelist">omitirá las reglas del cortafuegos universal</string>
+    <string name="ada_app_status_exclude">se excluye del dns y cortafuegos</string>
+    <string name="ada_app_status_isolate">está aislada; sólo se permiten IPs de confianza</string>
+    <string name="ada_app_status_unknown">es desconocido</string>
+    <string name="ada_app_isolate">Aislamiento</string>
+    <string name="ada_app_dns_settings">Configuración DNS</string>
+    <string name="bsac_title_desc">Las normas se aplican únicamente a esta aplicación.</string>
+    <string name="notif_download_content_text">Descarga en curso…</string>
+    <string name="network_dns">Sistema DNS</string>
+    <string name="notif_download_failure_content">La descarga ha fallado. Inténtelo de nuevo.</string>
+    <string name="notif_download_cancel_content">Descarga cancelada.</string>
+    <string name="rbl_privacy" description="The text appears as part of the blocklist setup screen as categories or headlines">Privacidad</string>
+    <string name="rt_edit_dialog_positive">Editar</string>
+    <string name="rt_download_start">Descargando las listas de bloqueo…</string>
+    <string name="rt_download">Descargar las listas de bloqueo</string>
+    <string name="rt_chip_update_available">Actualización disponible</string>
+    <string name="rt_filter_parent_selected">Seleccionadas</string>
+    <string name="rt_filter_hint">Mostrando <u>todas</u> las listas de bloqueo</string>
+    <string name="rt_filter_desc">Mostrando listas de bloqueo <u>%1$s</u></string>
+    <string name="rt_download_desc">Descargue las listas de bloqueo (alrededor de 60MB) para utilizar esta función.</string>
+    <string name="radio_sky_btn">⛅ Sky</string>
+    <string name="radio_max_btn">🪂 Max</string>
+    <string name="rt_filter_desc_subgroups">Mostrando <u>%1$s</u> listas de bloques en el grupo: %2$s y el subgrupo: %3$s</string>
+    <string name="bsrf_clear_filter">Limpiar</string>
+    <string name="dc_dns_crypt">DNSCrypt</string>
+    <string name="dc_dns_proxy">Proxy DNS</string>
+    <string name="lbbs_enabled">Activado</string>
+    <string name="lbbs_configure">Configurar</string>
+    <string name="lbbs_copy">Copiar como URL RDNS+</string>
+    <string name="lbbs_search">Buscar dominios en listas de bloqueo</string>
+    <string name="lbbs_update_check">Buscar actualizaciones</string>
+    <string name="lbbs_redownload">Volver a descargar las listas de bloqueo</string>
+    <string name="brbs_backup_title">Respaldo</string>
+    <string name="lbbs_heading">Configurar más de 195 listas de bloqueo</string>
+    <string name="brbs_restore_title">Restaurar</string>
+    <string name="brbs_restore_desc">Restaurar desde un archivo de copia de seguridad</string>
+    <string name="brbs_backup_desc">Copia de seguridad de la configuración de la aplicación, la red y los registros DNS</string>
+    <string name="brbs_backup_dialog_title">Hacer un respaldo</string>
+    <string name="brbs_backup_dialog_message">Realiza una copia de seguridad de la configuración de la aplicación, la red y los registros DNS en un archivo. Esto reiniciará la VPN.</string>
+    <string name="brbs_backup_dialog_positive">Respaldo</string>
+    <string name="brbs_restore_dialog_title">Restaurar copia de seguridad</string>
+    <string name="brbs_restore_dialog_message">Restaurar la configuración de la aplicación, la red y los registros DNS desde un archivo de copia de seguridad. Esto reiniciará la aplicación.</string>
+    <string name="brbs_backup_dialog_failure_title">Falló la copia de respaldo</string>
+    <string name="brbs_backup_dialog_failure_message">No se ha podido realizar la copia de seguridad. ¿Intentar de nuevo\?</string>
+    <string name="brbs_backup_dialog_failure_positive">Reintentar la copia de seguridad</string>
+    <string name="brbs_restore_dialog_failure_positive">Reintentar la restauración</string>
+    <string name="brbs_restore_dialog_failure_message">No se ha podido restaurar. ¿Intentar de nuevo\?</string>
+    <string name="brbs_restore_complete_toast">Restauración completada, reiniciando la aplicación…</string>
+    <string name="brbs_backup_complete_toast">Copia de seguridad completa</string>
+    <string name="settings_theme_dialog_title">Apariencia</string>
+    <string name="settings_socks_forwarding_default_desc">Reenvía las conexiones al punto de acceso SOCKS5.</string>
+    <string name="about_settings">sistema</string>
+    <string name="about_whats_new">Novedades en %1$s</string>
+    <string name="about_app_contributors">Autores</string>
+    <string name="dc_dns_website_desc">Obtener los iconos del sitio web <i>nextdns.io</i> y <i>duckduckgo.com</i>. Consume hasta 350 mb de espacio en disco</string>
+    <string name="settings_theme_dialog_themes_1">Fijado por el sistema</string>
+    <string name="settings_socks5_dialog_hint_username">Nombre de usuario (opcional)</string>
+    <string name="settings_socks5_dialog_hint_password">Contraseña (opcional)</string>
+    <string name="about_mail_bugreport_text">Envíe este correo electrónico a : hello@celzero.com</string>
+    <string name="settings_notification_dialog_option_2">"
+\nDNS / DNS + Cortafuegos:
+\nMuestra dos botones para cambiar rápidamente entre el modo DNS de ahorro de batería y el modo normal DNS + Firewall."</string>
+    <string name="settings_selected_theme">Tema actual: %1$s</string>
+    <string name="dns_crypt_relay_remove_dialog_title">¿Borrar el repetidor DNSCrypt\?</string>
+    <string name="dns_crypt_relay_remove_success">Repetidor DNSCrypt borrado.</string>
+    <string name="always_on_dialog_positive_btn">Ir a los ajustes</string>
+    <string name="private_dns_dialog_heading">Desactivar DNS privado</string>
+    <string name="private_dns_dialog_desc">La configuración DNS de Rethink es anulada por el DNS Privado de Android.
+\n
+\nPara usar el DNS de Rethink, ve a Ajustes de Android y desactiva \"DNS Privado\".</string>
+    <string name="private_dns_dialog_positive">Ir a los ajustes</string>
+    <string name="doh_custom_url_remove_dialog_message">Borra el punto de acceso de DNS sobre Https de la configuración guardada.</string>
+    <string name="dns_proxy_remove_dialog_title">¿Borrar el proxy DNS\?</string>
+    <string name="local_blocklist_redownload">¡Al día!</string>
+    <string name="configure_dns_crypt">DNSCrypt: %1$s servidores de resoluciones</string>
+    <string name="local_blocklist_redownload_desc">Las listas de bloqueo del dispositivo ya están en la última versión v%1$s.</string>
+    <string name="blocklist_update_check_not_required">Las listas de bloqueo ya están en la última versión.</string>
+    <string name="show_logs_disabled_network_message">El registro de la conexión ha sido desactivado. Para volver a activarlo, vaya a <i>Ajustes</i> y habilite <i>Activar el registro en el dispositivo.</i></string>
+    <string name="configure_dns_connected_doh_status">DNS sobre HTTPS</string>
+    <string name="configure_dns_connected_dns_crypt_status">DNSCrypt</string>
+    <string name="configure_dns_connection_name">Conectado a %1$s</string>
+    <string name="http_proxy_dialog_heading">Establecer CONEXIÓN proxy HTTP(S)</string>
+    <string name="download_update_dialog_trylater_message">La actualización no puede ejecutarse en este momento, por favor inténtelo de nuevo más tarde.</string>
+    <string name="blocklist_update_check_failure">Algo ha ido mal. ¡Vuelve a intentarlo de nuevo!</string>
+    <string name="search_firewall_network_log"><font size="12">Buscar aplicaciones, IPs, dominios</font></string>
+    <string name="search_custom_domains"><font size="12">Buscar nombres de dominio</font></string>
+    <string name="search_rethinkplus_file_tag"><font size="12">Buscar en las listas de bloqueo</font></string>
+    <string name="app_mode_dns_low_battery">DNS (ahorro de batería)</string>
+    <string name="app_mode_dns">DNS</string>
+    <string name="app_mode_wireguard">VPN</string>
+    <string name="settings_vpn_heading">vpn</string>
+    <string name="info_dialog_copy_toast_msg">Dirección IP copiada.</string>
+    <string name="info_dialog_url_copy_toast_msg">URL copiada</string>
+    <string name="info_dialog_rethink_toast_msg">Copiada URL como RDNS+ DNS-sobre-HTTPS</string>
+    <string name="settings_enable_logs_desc">Almacenar los registros de DNS y Cortafuegos localmente en el dispositivo.</string>
+    <string name="settings_enable_logs">Activar el registro en el dispositivo</string>
+    <string name="app_mode_choose">Elija el modo</string>
+    <string name="whats_dialog_title">Novedades de la versión 055a</string>
+    <string name="settings_app_notification_a13_desc">Habilita el permiso de notificación para la aplicación</string>
+    <string name="settings_theme_heading">Apariencia</string>
+    <string name="settings_theme_desc">Tema oscuro/claro</string>
+    <string name="settings_http_proxy_error_text3">El nombre de host está vacío</string>
+    <string name="settings_http_proxy_error_text4">Ha fallado la conexión con el host. Inténtelo de nuevo.</string>
+    <string name="settings_app_list_default_app">Ninguna</string>
+    <string name="settings_socks_forwarding_desc">Reenviando a %1$s:%2$s, %3$s</string>
+    <string name="settings_socks_forwarding_desc_no_app">Reenviando a %1$s:%2$s</string>
+    <string name="firewall_card_text_active">%1$s bloqueados
+\n%2$s omitidos
+\n%3$s excluidos
+\n%4$s aislados</string>
+    <string name="settings_socks5_dialog_hint_ip">Dirección IP</string>
+    <string name="settings_theme_dialog_themes_2">Claro</string>
+    <string name="settings_theme_dialog_themes_3">Oscuro</string>
+    <string name="settings_notification_desc3">Ninguno</string>
+    <string name="settings_notification_dialog_title">Elija la acción de notificación</string>
+    <string name="settings_notification_dialog_option_1">"
+\nPausa / Parar (por defecto):
+\nMuestra dos botones, para pausar y detener rápidamente Rethink."</string>
+    <string name="settings_notification_dialog_option_3">"
+\nNinguno:
+\nNo muestra ningún botón.
+\n"</string>
+    <string name="firewall_card_status_active">%1$s aplicaciones</string>
+    <string name="dns_card_latency_active">%1$sms</string>
+    <string name="dns_card_latency_inactive">Activar el modo DNS.</string>
+    <string name="apps_card_ips_count">%1$s Regla(s) de IP y puerto</string>
+    <string name="hsf_start_btn_state">iniciar</string>
+    <string name="hsf_stop_btn_state">detener</string>
+    <string name="hsf_uptime">(activo %1$s; protos: %2$s; tipo: %3$s)</string>
+    <string name="hsf_vpn_dialog_header">¡Atención!</string>
+    <string name="lbl_proceed">Proceder</string>
+    <string name="hsf_vpn_prepare_failure">O falta el permiso de la VPN, u otra aplicación está en modo de VPN siempre activa.</string>
+    <string name="hsf_notification_permission_failure">Activar el permiso de notificación desde la pantalla de Ajustes</string>
+    <string name="hsf_start_dialog_header">Iniciar %1$s</string>
+    <string name="hsf_start_dialog_message">Está a un paso de tener un Android seguro y protegido: vea al instante la actividad de la red, bloquee sitios web, IPs y aplicaciones que se comportan mal.</string>
+    <string name="hsf_start_dialog_positive">Iniciar</string>
+    <string name="hsf_whats_new_chip_text">Novedades</string>
+    <string name="hsf_proxy_chip_text">Proxy activo</string>
+    <string name="hsf_pause_lockdown_failure">No se puede pausar: Rethink está en modo de aislamiento</string>
+    <string name="hsf_blocklist_chip_text_no_data">Activar RDNS+</string>
+    <string name="hsf_proxy_chip_removed_toast">Proxy eliminado</string>
+    <string name="hsf_proxy_chip_remove_text">Parando…</string>
+    <string name="hsf_whats_new_remove_text">Cerrando…</string>
+    <string name="hsf_blocklist_updating_text">Activando…</string>
+    <string name="hsf_chip_appearance">Tema: %1$s</string>
+    <string name="hsf_pause_vpn_failure">No se puede pausar: Rethink no está activo</string>
+    <string name="dc_other_dns_heading">tipo</string>
+    <string name="dc_custom_dns_radio">Otros DNS</string>
+    <string name="hsf_exclude_error">La exclusión no es posible en el modo de aislamiento VPN</string>
+    <string name="dc_dns_website_heading">Mostrar el icono del sitio web en los registros de DNS (en pruebas)</string>
+    <string name="dc_rethink_dns_radio">Rethink DNS</string>
+    <string name="dc_entries">%1$s entradas »</string>
+    <string name="dc_dns_leaks_heading">Evitar las fugas de DNS</string>
+    <string name="dc_check_update_desc">Comprueba las actualizaciones de la lista de bloqueo una vez cada <i>tres</i> días</string>
+    <string name="about_join_telegram">Telegram</string>
+    <string name="about_bug_report">Informe de errores</string>
+    <string name="about_bug_no_log_dialog_title">Informe de errores</string>
+    <string name="about_bug_no_log_dialog_positive_btn">Enviar correo electrónico</string>
+    <string name="about_bug_report_dialog_positive_btn">Enviar correo electrónico</string>
+    <string name="about_web">enlaces</string>
+    <string name="about_website">Visite rethinkdns.com</string>
+    <string name="about_github">Contribuir en GitHub</string>
+    <string name="about_docs">Leer documentación</string>
+    <string name="about_sponsor_link_text">Patrocinadores</string>
+    <string name="about_email">Envíenos un correo electrónico</string>
+    <string name="about_settings_notification">Configuración de notificaciones</string>
+    <string name="about_mozilla">Rethink cuenta con el apoyo de Mozilla Builders, OSOM Products Inc, FOSS United Foundation.</string>
+    <string name="about_app_update_check">Buscar actualizaciones de la aplicación</string>
+    <string name="about_app_translate">Traducir</string>
+    <string name="about_dialog_positive_button">Vamos</string>
+    <string name="about_mail_to">hello@celzero.com</string>
+    <string name="about_mail_to_string">a:</string>
+    <string name="about_mail_subject">[Rethink]:</string>
+    <string name="app_info_error">No se pudo iniciar la información de la aplicación.</string>
+    <string name="vpn_profile_error">No se pudo iniciar el perfil VPN.</string>
+    <string name="about_twitter">Síganos en Twitter</string>
+    <string name="cd_doh_dialog_resolver_url">URL del servidor de resoluciones</string>
+    <string name="private_dns_error">No se pudo iniciar la pantalla de dns privado.</string>
+    <string name="notification_screen_error">No se pudo iniciar la pantalla de notificaciones de la aplicación.</string>
+    <string name="intent_launch_error">No se pudo iniciar %1$s</string>
+    <string name="no_browser_error">No se pudo abrir la página web desde el navegador.</string>
+    <string name="log_file_not_available">No se encontró ningún informe de fallo</string>
+    <string name="error_loading_log_file">Error al cargar el archivo de registro</string>
+    <string name="collecting_logs_progress_text">Capturando…</string>
+    <string name="cd_custom_dns_proxy_name">Proxy %1$s</string>
+    <string name="cd_dns_proxy_mode_external">Externo</string>
+    <string name="cd_dns_proxy_error_text_1">Dirección IP no válida</string>
+    <string name="cd_dns_crypt_name">DNSCrypt %1$s</string>
+    <string name="cd_dns_crypt_dialog_stamp">Sello</string>
+    <string name="dns_btm_latency_ms">%1$sms</string>
+    <string name="dns_btm_record_type">Tipo de consulta: %1$s</string>
+    <string name="univ_firewall_rule_1">Bloquear todas las aplicaciones cuando el dispositivo está bloqueado</string>
+    <string name="fapps_unmetered_block_dialog_title">Bloquear en redes sin límites</string>
+    <string name="fapps_metered_block_dialog_message">¿Bloquear las conexiones en la red con límites (móvil) para las aplicaciones en la <i>lista</i>\?</string>
+    <string name="fapps_firewall_filter_hint">Mostrando todas las aplicaciones</string>
+    <string name="univ_ip_delete_dialog_positive">Borrar todo</string>
+    <string name="univ_delete_firewall_dialog_title">¿Borrar todas las reglas IP\?</string>
+    <string name="univ_delete_firewall_dialog_message">El borrado de estas reglas permitiría a cualquier aplicación conectarse a las IPs actualmente bloqueadas.</string>
+    <string name="dns_connected">Conectado</string>
+    <string name="fapps_filter_filter_heading">Tipo</string>
+    <string name="fapps_filter_categories_heading">Categorías</string>
+    <string name="orbot_toast_parameter">Tor-como-un-proxy</string>
+    <string name="firewall_rule_block_unmetered">Sin límites (WiFi)</string>
+    <string name="firewall_rule_univ_block_metered">Con límites (Universal)</string>
+    <string name="firewall_rule_block_app_univ_mobile_desc">Una regla del cortafuegos universal activada por el usuario ha bloqueado esta <i>aplicación</i> al intentar conectarse a la red <i>Con límites</i> (Móvil).<br/><br/> Para cambiarla, vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_block_app">Aplicación bloqueada</string>
+    <string name="firewall_rule_trusted_ip">IP Confiable</string>
+    <string name="firewall_rule_trusted_ip_desc">Esta conexión fue permitida porque la <i>IP destino</i> está configurada como IP de confianza.<br/><br/> Para cambiarla, vaya a la pantalla del <i>Cortafuegos específico de la aplicación.</i>.</string>
+    <string name="firewall_rule_block_univ_ip">IP / Puerto (Universal)</string>
+    <string name="firewall_rule_block_ip_univ_desc">Una regla del cortafuegos activada por el usuario ha bloqueado la <i>IP destino / Puerto</i>.<br/><br/> Para cambiarla vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_exempt_orbot_setup_desc">Esta conexión fue permitida porque la configuración <i>Tor-como-un-proxy en un clic</i> a través de Orbot estaba en curso.</string>
+    <string name="firewall_rule_global_lockdown_desc">Esta conexión fue bloqueada porque el aislamiento universal está configurado.<br/><br/> Para cambiarlo vaya a la pestaña <i>Universal</i>.</string>
+    <string name="new_app_notification_action_toast_allow">Conexión de red permitida para la aplicación</string>
+    <string name="notif_channel_firewall_alerts">Alertas de cortafuegos</string>
+    <string name="notif_channel_proxy_failure">Alertas de proxy</string>
+    <string name="notif_channel_download">Alertas de descargas</string>
+    <string name="category_name_sys_apps">Aplicaciones del sistema</string>
+    <string name="cd_remove_dialog_title">¿Borrar dominio\?</string>
+    <string name="cd_remove_dialog_message">Elimina el dominio de la configuración guardada.</string>
+    <string name="cd_dialog_title">Añadir dominio</string>
+    <string name="cd_dialog_desc">URL personalizada (dominio) o comodín para permitir o bloquear. P.ej., *.test.com, test.com/test</string>
+    <string name="cd_dialog_edittext_hint">Entre en %1$s</string>
+    <string name="cd_dialog_error_invalid_domain">URL(dominio) inválido.</string>
+    <string name="cd_dialog_error_invalid_wildcard">Comodín inválido.</string>
+    <string name="cd_blocked_initial">B</string>
+    <string name="cd_no_rule_initial">N</string>
+    <string name="cd_no_rule_txt">Ninguna regla</string>
+    <string name="ci_dialog_edittext_hint">Dirección IP, subred o puerto</string>
+    <string name="ci_dialog_error_invalid_ip">Dirección IP, subred o puerto no válidos.</string>
+    <string name="ci_dialog_added_success">IP añadida a la lista</string>
+    <string name="ci_no_rules_text">No hay reglas de IP o puerto.</string>
+    <string name="ada_app_unmetered">Sin límites</string>
+    <string name="ada_app_metered">Con límites</string>
+    <string name="ci_bypass_universal_txt">Omisión universal</string>
+    <string name="ci_trust_txt">Confiable</string>
+    <string name="ci_bypass_universal_initial">BU</string>
+    <string name="ci_trust_initial">T</string>
+    <string name="ci_bypass_universal">Omisión universal</string>
+    <string name="ada_app_bypass_univ">Omisión universal</string>
+    <string name="ci_block">Bloquear</string>
+    <string name="ci_delete">borrar</string>
+    <string name="ada_noapp_dialog_title">No existe la aplicación</string>
+    <string name="ada_noapp_dialog_message">Falta información sobre la aplicación. ¿Quizá se ha desinstalado esta aplicación\?</string>
+    <string name="ada_noapp_dialog_positive">Bien</string>
+    <string name="ada_firewall_title">reglas de cortafuegos para esta aplicación</string>
+    <string name="ada_network_log_title">registro de red para esta aplicación</string>
+    <string name="ada_app_exclude">Excluir</string>
+    <string name="ada_delete_logs_dialog_title" description="Appears as dialog title to clear the logs in app specific screen">Borrar registros</string>
+    <string name="ada_delete_logs_dialog_desc" description="Appears as dialog description to clear the logs in app specific screen">Borra todos los registros relacionados con esta aplicación.</string>
+    <string name="bsdl_blocked_desc">bloqueado %1$s por %2$s</string>
+    <string name="notif_download_content_title">Descargar de la lista de bloqueo en el dispositivo</string>
+    <string name="notif_download_success_content">Descargar con éxito.</string>
+    <string name="rbl_parental_control" description="The text appears as part of the blocklist setup screen as categories or headlines">Control parental</string>
+    <string name="rbl_parental_control_desc" description="The text appears as blocklists description in configure screen">Bloquee contenidos para adultos y pirateados, juegos, citas en línea y redes sociales.</string>
+    <string name="rbl_privacy_desc" description="The text appears as blocklists description in configure screen">Bloquea attentionware, spyware, scareware.</string>
+    <string name="rbl_security" description="The text appears as part of the blocklist setup screen as categories or headlines">Seguridad</string>
+    <string name="rbl_security_desc" description="The text appears as blocklists description in configure screen">Bloquee malware, ransomware, cryptoware, phishers y otras amenazas.</string>
+    <string name="dc_doh">Dns sobre HTTPS</string>
+    <string name="lbbs_download">Actualizar las listas de bloqueo</string>
+    <string name="rt_dialog_title">Guardar Cambios</string>
+    <string name="rt_dialog_message">¿Desea aplicar las listas de bloqueo recién configuradas\?</string>
+    <string name="rt_dialog_neutral">Continuar</string>
+    <string name="rt_chip_check_update">Buscar actualizaciones</string>
+    <string name="rt_re_download">Volver a descargar las listas de bloqueo</string>
+    <string name="lbl_advanced">avanzado</string>
+    <string name="rt_list_simple_btn_txt">Simple</string>
+    <string name="rethink_max_desc">Más de 50 ubicaciones; más privadas; resolución recursiva que funciona en fly.io</string>
+    <string name="rethink_sky_desc">Más de 280 ubicaciones; mayor tiempo de actividad; resolución local que se ejecuta en cloudflare.com</string>
+    <string name="bsrf_sub_group_heading">Subgrupo</string>
+    <string name="dc_rethink_dns">Rethink DNS</string>
+    <string name="brbs_title">Respaldo y restauración</string>
+    <string name="brbs_restore_dialog_positive">Restaurar</string>
+    <string name="brbs_restore_dialog_failure_title">La restauración ha fallado</string>
+    <string name="brbs_restore_no_uri_toast">La restauración ha fallado; inténtalo de nuevo</string>
+    <string name="rsv_blocklist_count_text" description="This label will appear in rethink configure simple view screen which shows number of blocklists for each category">%1$s listas de bloqueo</string>
+    <string name="notif_dialog_pause_dialog_negative">Descartar</string>
+    <string name="notif_dialog_pause_dialog_message">Aplicación pausada, reanudar para continuar</string>
+    <string name="notif_dialog_pause_dialog_title">¡Aplicación pausada!</string>
+    <string name="notif_dialog_pause_dialog_positive">Reanudar</string>
+    <string name="notif_dialog_pause_dialog_neutral">Mostrar</string>
+    <string name="dc_local_block_enabled">Activado</string>
+    <string name="settings_import_export_desc">Realiza manualmente una copia de seguridad o restaura los datos y configuración de la aplicación.</string>
+    <string name="hsf_downtime">(inactivo desde %1$s)</string>
+    <string name="fav_icon">icono_favorito</string>
+    <string name="dns_connected_rethink_plus">Conectado. %1$s listas de bloqueo en uso</string>
+    <string name="settings_notification_desc1">Pausar / Detener (por defecto)</string>
+    <string name="configure_dns_connected_dns_proxy_status">Proxy DNS</string>
+    <string name="dc_block_heading">reglas</string>
+    <string name="new_app_notification_action_deny">Seguir bloqueando</string>
+    <string name="new_app_bulk_notification_title">Atención</string>
+    <string name="cd_custom_dns_proxy_title">Proxy DNS personalizado</string>
+    <string name="univ_firewall_rule_2">Bloquear cualquier aplicación que no esté en uso</string>
+    <string name="txt_home">Inicio</string>
+    <string name="settings_dns_proxy_dialog_app_desc">La aplicación seleccionada se excluirá de la VPN para permitir que realice conexiones proxy en su nombre.</string>
+    <string name="firewall_status_blocked">bloqueadas</string>
+    <string name="firewall_card_text_inactive">Activar el modo cortafuegos.</string>
+    <string name="about_faq">Ver preguntas frecuentes</string>
+    <string name="dns_btm_sheet_dialog_message"> <Data> &lt;h3&gt;&lt;u&gt;&lt;tamaño de letra=8&gt;%1$s&lt;/font&gt;&lt;/u&gt;: %2$s lista(s) de bloqueo&lt;/h3&gt;%3$s.&lt;br/&gt;&lt;br/&gt;</Data> </string>
+    <string name="about_app">aplicación</string>
+    <string name="show_logs_disabled_dns_message">El registro de solicitudes DNS ha sido desactivado. Para volver a activarlo, vaya a <i>Ajustes</i> y habilite <i>Activar el registro en el dispositivo.</i></string>
+    <string name="orbot_bs_status_3">Reenviando %1$s a Orbot, Proxy HTTP también configurado.</string>
+    <string name="settings_dns_proxy_dialog_app">Aplicación</string>
+    <string name="settings_socks5_heading">Configurar el proxy SOCKS5</string>
+    <string name="settings_socks5_desc">Reenvía las conexiones al punto de acceso SOCKS5.</string>
+    <string name="orbot_stop_dialog_neutral">Cambiar el DNS</string>
+    <string name="settings_import_export_heading">Copia de seguridad y restauración</string>
+    <string name="settings_proxy_header">proxy</string>
+    <string name="orbot">Orbot</string>
+    <string name="settings_autostart_bootup_heading">Arranque automático al encender (en pruebas)</string>
+    <string name="settings_check_update_heading">Buscar actualizaciones de la aplicación</string>
+    <string name="settings_custom_downloader_heading">Utilizar el descargador de la aplicación</string>
+    <string name="next">Siguiente</string>
+    <string name="orbot_http_desc">Establece un túnel de CONEXIÓN HTTP con Orbot.</string>
+    <string name="orbot_app_issue">No se puede lanzar Orbot. ¿Está instalado\?</string>
+    <string name="orbot_stop_dialog_negative">Detener Orbot</string>
+    <string name="status_failing" description="This text appears if the connection is currently not working correctly. [CHAR_LIMIT=NONE]">fallando</string>
+    <string name="orbot_stop_dialog_dns_message">Rethink está configurado para reenviar las consultas DNS a Orbot. Cámbielo según sea necesario.</string>
+    <string name="orbot_install_dialog_title">¿Instalar Orbot\?</string>
+    <string name="warning_title" description="Status indicator text shown in a warning notification.">Advertencia: Rethink ha sido desactivado</string>
+    <string name="hybrid_mode_notification_title">¡Protegido! Conectado mediante DNS + Cortafuegos.</string>
+    <string name="settings_ptrans_desc">Traduce el tráfico IPv6 saliente a IPv4 en el dispositivo. Habilite esta opción si está conectado a una red de sólo IPv4.</string>
+    <string name="orbot_bs_status_1">Reenviando las conexiones de %1$s a Orbot.</string>
+    <string name="orbot_bs_status_2">Proxy HTTP activado.</string>
+    <string name="settings_socks5_vpn_disabled_error">Inicie Rethink para continuar.</string>
+    <string name="pause_title_desc">esperando…</string>
+    <string name="settings_network_all_networks">Utilizar todas las redes disponibles (en pruebas)</string>
+    <string name="settings_https_heading">Configurar proxy de CONEXIÓN HTTP(S)</string>
+    <string name="orbot_install_dialog_positive">Instalar</string>
+    <string name="orbot_download_link_website">https://github.com/guardianproject/orbot/releases</string>
+    <string name="orbot_bs_status_trying_connect">Configurar Orbot…</string>
+    <string name="orbot_stop_dialog_title">Intervención manual necesaria</string>
+    <string name="title_settings">Ajustes</string>
+    <string name="settings_ip_network_heading">Elija la versión de IP</string>
+    <string name="orbot_install_dialog_message">Orbot lleva las características y funcionalidades de Tor a Android.</string>
+    <string name="orbot_install_dialog_neutral">sitio web</string>
+    <string name="settings_autostart_bootup_desc">Al encender el dispositivo, se iniciará Rethink si se estaba ejecutando antes de apagarlo.</string>
+    <string name="settings_check_update_desc">Comprueba automáticamente las actualizaciones de la aplicación una vez a la semana.</string>
+    <string name="settings_https_desc">Reenvía las conexiones al punto final de la CONEXIÓN HTTP(S).</string>
+    <string name="status_dns_error">error de dns</string>
+    <string name="settings_socks5_disabled_error">Conectado a %1$s. Apágalo para continuar.</string>
+    <string name="settings_orbot_notification_content">Fallo al iniciar Tor-como-un-Proxy. Abra la aplicación Orbot para iniciarla manualmente.</string>
+    <string name="settings_orbot_notification_action">Abrir Orbot</string>
+    <string name="settings_orbot_header">Orbot\t❯</string>
+    <string name="orbot_http">Proxy HTTP</string>
+    <string name="orbot_status_arg_2">TCP</string>
+    <string name="orbot_title">Orbot y Proxies</string>
+    <string name="settings_allow_bypass_desc">Permite a las aplicaciones solicitantes acceder a todas las redes disponibles. Estas aplicaciones pueden eludir el túnel VPN bajo demanda de Rethink. Algunas aplicaciones de audio/vídeo conferencia como Zoom y Meet pueden requerir esto para funcionar correctamente.</string>
+    <string name="settings_lock_down_mode_desc">Ciertas opciones están desactivadas cuando la VPN está en modo aislamiento. <u>Ver los ajustes de la VPN</u>.</string>
+    <string name="settings_ip_network_desc">Elija entre las versiones del Protocolo de Internet.</string>
+    <string name="orbot_none">Ninguna (por defecto)</string>
+    <string name="orbot_stop_dialog_message">Rethink ha dejado de reenviar conexiones a Orbot, pero Orbot podría estar funcionando en segundo plano.</string>
+    <string name="settings_orbot_desc">Orbot en modo no-vpn con HTTPS/SOCKS5.</string>
+    <string name="settings_orbot_install_desc">Pulse aquí para instalar Orbot</string>
+    <string name="orbot_stop_dialog_message_combo">%1$s
+\n
+\n%2$s</string>
+    <string name="settings_title_desc">Un DNS y Cortafuegos altamente personalizables</string>
+    <string name="skip">Omitir</string>
+    <string name="status_app_error">error de la aplicación</string>
+    <string name="orbot_socks5">Proxy sólo TCP</string>
+    <string name="orbot_none_desc">Ninguna de las anteriores.</string>
+    <string name="orbot_status_arg_3">DNS y TCP</string>
+    <string name="settings_orbot_heading">Configuración de Orbot</string>
+    <string name="settings_https_disabled_error">Conectado a %1$s. apague para continuar.</string>
+    <string name="settings_general_header">general</string>
+    <string name="settings_ptrans_heading">Forzar la salida de IPv4</string>
+    <string name="orbot_bs_status_4">Configuración de Tor-como-un-Proxy (Orbot) con un solo clic.</string>
+    <string name="settings_network_all_networks_desc">Cuando está activado, Rethink utiliza todas las redes disponibles para conectarse a Internet. Si no, utiliza la red que Android considere <i>activa</i>.</string>
+    <string name="settings_custom_downloader_desc">Si se desactiva, se utilizará el <i>Administrador de descargas</i> integrado en Android</string>
+    <string name="orbot_both">Proxy HTTP + TCP</string>
+    <string name="orbot_both_desc">Todas las anteriores.</string>
+    <string name="orbot_install_activity_error">Algo salió mal, inténtalo después de un tiempo</string>
+    <string name="orbot_socks5_desc">Reenvía todas las conexiones TCP a Orbot.</string>
+    <string name="orbot_website_link">https://guardianproject.info/apps/org.torproject.android/</string>
+    <string name="settings_allow_bypass_heading">Habilitar la visibilidad de la red</string>
+    <string name="settings_ip_dialog_ipv6">IPv6 (en pruebas)</string>
+    <string name="search_universal_ips"><font size="12">Buscar IPs</font></string>
+    <string name="title_about">Acerca de</string>
+    <string name="about_title_desc">Detectar y bloquear las amenazas a la seguridad de la red</string>
+    <string name="slide_2_title">Bienvenido</string>
+    <string name="about_version_install_source">v%1$s (%2$s)</string>
+    <string name="about_telegram_link">https://telegram.me/rethinkdns</string>
+    <string name="about_github_link">https://github.com/celzero/rethink-app</string>
+    <string name="slide_1_desc">Rethink es un programa de código abierto respaldado por el programa MVP de Mozilla Builders.</string>
+    <string name="firewall_mode_notification_title">¡Protegido! Conectado al Cortafuegos.</string>
+    <string name="status_protected" description="This is a large message in a reassuring color.  It indicates that DNS queries can't be surveilled or modified in transit.">protegido</string>
+    <string name="status_protected_with_tor">protegido con tor</string>
+    <string name="alert_firewall_accessibility_explanation">Rethink utiliza el servicio de accesibilidad para rastrear qué aplicaciones están en uso (primer plano) frente a las que no están en uso (segundo plano).
+\n
+\nRethink no recopila ninguna información ni le espía de ninguna manera.</string>
+    <string name="alert_firewall_accessibility_regrant_explanation">El servicio de accesibilidad de Rethink se ha detenido o ha fallado. <i><b>Vaya a Ajustes y fuerce la detención de</b></i> Rethink e inicielo de nuevo para usar la función <i>Bloquear cualquier aplicación que no esté en uso</i>.
+\n
+\nRethink utiliza el servicio de accesibilidad para rastrear las aplicaciones que están en uso (en primer plano) frente a las que no están en uso (en segundo plano).</string>
+    <string name="alert_firewall_accessibility_exception">Fallo al abrir los Ajustes de accesibilidad. ¡Vuelva a intentarlo de nuevo!</string>
+    <string name="bsct_block">Bloquear, omitir, excluir, aislar <u>esta aplicación</u></string>
+    <string name="bsct_conn_block_desc">bloqueado %1$s por %2$s</string>
+    <string name="bsct_conn_block_desc_device">bloqueado %1$s en el dispositivo</string>
+    <string name="bsct_block_ip">Bloquear, confiar en <u>esta IP</u> para <u>esta aplicación</u></string>
+    <string name="bsct_conn_rule_explanation"><u>#1</u>: Bloquea una aplicación para que no se conecte a Internet.
+\n <u>#2</u>: Bloquea cualquier aplicación para que no se conecte a una IP concreta.
+\n <u>#3</u>: Bloquea todas las conexiones cuando el dispositivo está bloqueado (Cortafuegos Universal).
+\n <u>#4</u>: Bloquea cualquier aplicación que no esté en uso (Cortafuegos Universal).
+\n <u>#5</u>: Bloquea las conexiones cuando la aplicación de origen es desconocida (Cortafuegos Universal).
+\n <u>#6</u>: Bloquea todo el tráfico UDP excepto DNS (Cortafuegos Universal).
+\n <u>#7</u>: Bloquea las conexiones cuando se omite el DNS (Cortafuegos Universal).</string>
+    <string name="bsct_conn_desc_allowed">permitido en %1$s %2$s</string>
+    <string name="bsct_conn_desc_blocked">bloqueado en %1$s %2$s</string>
+    <string name="always_on_dialog">La \"VPN siempre activa\" está activada en este dispositivo. Para iniciar Rethink, dirígete a los Ajustes de la aplicación y desactiva \"VPN siempre activa\".</string>
+    <string name="always_on_dialog_stop_message">La VPN siempre activa está activada para Rethink. ¿Está seguro que quiere detener Rethink de todos modos\?</string>
+    <string name="univ_firewall_dialog_message">Eliminar esta regla permitiría a cualquier aplicación conectarse a esta IP. ¿Desea continuar\?</string>
+    <string name="firewall_act_network_monitor_tab">Red</string>
+    <string name="always_on_dialog_positive">Detener</string>
+    <string name="dns_act_configure_tab">Configurar</string>
+    <string name="dns_crypt_url_remove_success">Servidor de resoluciones DNSCrypt borrado.</string>
+    <string name="dns_crypt_url_remove_dialog_message">Borra el servidor de resoluciones DNSCrypt de la configuración guardada.</string>
+    <string name="dns_proxy_remove_success">Proxy DNS borrado.</string>
+    <string name="local_blocklist_download">Descargar las listas de bloqueo</string>
+    <string name="local_blocklist_download_desc">¿Quiere descargar las listas de bloqueo (unos 60 MB) para utilizar esta función\?</string>
+    <string name="dns_proxy_remove_dialog_message">Borra el Proxy DNS de la configuración guardada.</string>
+    <string name="download_update_dialog_message">Una nueva versión de la aplicación está disponible para su descarga en el sitio web. ¿Quiere continuar\?</string>
+    <string name="download_update_dialog_failure_message">O bien nuestros servidores están caídos o no se ha podido establecer la conexión. Por favor, inténtelo de nuevo mas tarde.</string>
+    <string name="contributors_list">El &lt;i&gt;Proyecto de Código Abierto Rethink&lt;/i&gt; debe su existencia a estos voluntarios que dedican incontables horas a su desarrollo.&lt;br/&gt; &lt;br/&gt;🛡️ Aplicación Android &lt;br/&gt; &lt;a href=https://github.com/BayLee4&gt;BayLee4&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/Ch4t4r&gt;Ch4t4r&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/HrBDev&gt;HrBDev&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/hussainmohd-a&gt;hussainmohd-a&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/ignoramous&gt;ignoramous&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/markwmuller&gt;markwmuller&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/Mygod&gt;Mygod&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/Uldiniad&gt;Uldiniad&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/Poussinou&gt;Poussinou&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/pjosingh&gt;pjosingh&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;🚂 Motor de red &lt;br/&gt; &lt;a href=https://github.com/alalamav&gt;alalamav&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/bemasc&gt;bemasc&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/dmcardle&gt;dmcardle&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/fortuna&gt;fortuna&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/ignoramous&gt;ignoramous&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/PeterDaveHello&gt;PeterDaveHello&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/santhosh-ponnusamy&gt;santhosh-ponnusamy&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/SeanBurford&gt;SeanBurford&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;📚 Resolvedor &lt;br/&gt; &lt;a href=https://github.com/ahmed-tasaly&gt;ahmed-tasaly&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/amithm7&gt;amithm7&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/arfshl&gt;arfshl&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/badmojr&gt;badmojr&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/bongochong&gt;bongochong&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/elliotwutingfeng&gt;elliotwutingfeng&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/georgyo&gt;georgyo&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/GiddyGoatGaming&gt;GiddyGoatGaming&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/Harish-Narayan&gt;Harish-Narayan&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/ignoramous&gt;ignoramous&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/JakeChampion&gt;JakeChampion&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/MasterKia&gt;MasterKia&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/mtxadmin&gt;mtxadmin&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/neneeen&gt;neneeen&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/PeterDaveHello&gt;PeterDaveHello&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/santhosh-ponnusamy&gt;santhosh-ponnusamy&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/shruuub&gt;shruuub&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/shuvashish76&gt;shuvashish76&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;⚜ Mods comunitarios &lt;br/&gt; &lt;a href=https://t.me/amithm7&gt;amithm7&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/TronSlayer&gt;Andersen&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/ppatra&gt;ppatra&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/InFamous23&gt;InFamous23&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/TheTr1ckst3r&gt;TheTr1ckst3r&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/Ch4t4r&gt;Ch4t4r&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/Billi_ance&gt;Billi_ance&lt;/a&gt;&lt;br/&gt; &lt;a href=https://t.me/kaliangel&gt;kaliangel&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/PoneyClairDeLune&gt;PoneyClairDeLune&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;📌 Geoposicionamiento IP &lt;br/&gt; &lt;a href=https://db-ip.com&gt;db-ip.com&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;❇ Traducciones &lt;br/&gt; &lt;a href=https://weblate.org/en/&gt;Weblate&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;🦆 Iconos &lt;br/&gt; &lt;a href=https://github.com/celzero/rethink-app/issues/346&gt;Icons&lt;/a&gt;&lt;br/&gt; &lt;br/&gt;📦 Construir servidores &lt;br/&gt; &lt;a href=https://jitpack.io/&gt;JitPack&lt;/a&gt;&lt;br/&gt; &lt;a href=https://github.com/&gt;GitHub&lt;/a&gt;&lt;br/&gt;</string>
+    <string name="fapps_info_dialog_message">Bloquea las aplicaciones para que no se conecten a Internet. Limitando el acceso a Internet se evita el uso de datos injustificado y se ahorra batería.</string>
+    <string name="firewall_rule_device_lock_desc">Esta conexión estaba bloqueada porque el <i>dispositivo estaba bloqueado</i> en ese momento.<br/><br/> Para cambiar este comportamiento vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_bypass_universal_ip_desc">Esta conexión se ha permitido porque la <i>IP destino</i> está configurada para omitir todas las reglas del cortafuegos universal.<br/><br/> Para cambiarla vaya a <i>Reglas IP</i> en la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_block_dns_bypass_desc">Esta conexión se bloqueó porque la <i>aplicación de origen</i> omitió el DNS preferido por el usuario.<br/><br/> Para cambiar este comportamiento, vaya a la pestaña <i>Universal</i>.</string>
+    <string name="firewall_rule_exempt_dns_proxied_desc">Esta conexión DNS fue desviada y reenviada al punto de acceso DNS preferido por el usuario.<br/><br/> Para cambiarlo desactive <i>Prevenir las fugas DNS</i> desde la pantalla <i>Configurar</i> DNS.</string>
+    <string name="firewall_rule_exempt_app_bypass_univ_desc">Esta conexión se ha permitido porque la <i>aplicación de origen</i> está configurada para omitir las reglas del <i>cortafuegos universal</i>.<br/><br/> Para cambiarlo, vaya a la pantalla <i>Cortafuegos específico de la aplicación</i>.</string>
+    <string name="firewall_rule_block_http_desc">Esta conexión fue bloqueada porque probablemente utilizó <i>HTTP inseguro</i>.<br/><br/> Para cambiarlo vaya a la pestaña <i>Universal</i>.</string>
+    <string name="ci_dialog_desc">Permitir (omitir) o bloquear la dirección IP, la subred (rango) IP, el puerto. P.ej.: 10.10.10.10, 10.1.1.*, 10.2.2/24, ffff::/104, [::]:80, [10.1.0.0/16]:80, *.*:80</string>
+    <string name="title_statistics">Estadísticas</string>
+    <string name="settings_locale_heading">Cambiar idioma</string>
+    <string name="settings_locale_desc">Elija su idioma preferido</string>
+    <string name="settings_locale_dialog_title">Elija su idioma preferido</string>
+    <string name="settings_biometeric_heading">Activar el bloqueo de aplicaciones</string>
+    <string name="settings_biometric_desc">Protege esta aplicación con el bloqueo de pantalla</string>
+    <string name="hs_biometeric_failed">Fallo en la autenticación biométrica</string>
+    <string name="hs_biometeric_error">Error de autenticación biométrica</string>
+    <string name="fapps_info_exclude_msg">Excluir de ambos DNS + Cortafuegos.</string>
+    <string name="fapps_info_isolate_msg">Bloquear todo excepto IPs de confianza.</string>
+    <string name="fapps_info_metered_msg">Permitir/Bloquear en red con límites (Móvil).</string>
+    <string name="fapps_bypass_block_dialog_title">Omitir aplicaciones</string>
+    <string name="fapps_isolate_block_dialog_title">Aislamiento de las aplicaciones</string>
+    <string name="fapps_exclude_block_dialog_message">¿Excluir las aplicaciones en la <i>lista</i> del DNS y Firewall\?</string>
+    <string name="ci_trust_rule">Confiar</string>
+    <string name="ssv_app_network_activity_heading" description="This label will appear on the stats screen as a header for allowed apps." translatable="true">aplicaciones más permitidas</string>
+    <string name="ssv_app_blocked_heading" description="This label will appear on the stats screen as a header for blocked applications." translatable="true">aplicaciones más bloqueadas</string>
+    <string name="ssv_most_contacted_domain_heading" description="This label will appear on the stats screen as a header for most visited domains" translatable="true">dominios más contactados</string>
+    <string name="ssv_most_contacted_ips_heading" description="This label will appear on the stats screen as a header for most visited ips" translatable="true">IPs más contactadas</string>
+    <string name="ssv_toast_start_rethink" description="This label will appear on the stats screen as toast to start Rethink app">Iniciar Rethink para continuar</string>
+    <string name="ssv_see_more">Mostrar todo</string>
+    <string name="settings_locale_dialog_neutral">Ayude a traducir esta aplicación</string>
+    <string name="ssv_most_blocked_ips_heading" description="This label will appear on the stats screen as a header for most blocked ips" translatable="true">IPs más bloqueadas</string>
+    <string name="hs_biometeric_title">Desbloquear Rethink</string>
+    <string name="hs_biometeric_desc">Utilice la autenticación biométrica para desbloquear Rethink</string>
+    <string name="fapps_unblock_dialog_title">Permitir aplicaciones</string>
+    <string name="fapps_exclude_block_dialog_title">Excluir aplicaciones</string>
+    <string name="ssv_most_blocked_domain_heading" description="This label will appear on the stats screen as a header for most blocked domains" translatable="true">dominios más bloqueados</string>
+    <string name="fapps_info_bypass_msg">Omite las reglas del cortafuegos universal.</string>
+    <string name="fapps_bypass_block_dialog_message">¿Omitir las reglas del cortafuegos universal para las aplicaciones de la <i>lista</i>\?</string>
+    <string name="fapps_info_unmetered_msg">Permitir/Bloquear en red sin límites (WiFi).</string>
+    <string name="hs_biometeric_feature_not_supported">La autenticación biométrica no es compatible o está desactivada en este dispositivo</string>
+    <string name="fapps_unblock_dialog_message">¿Permitir conexiones para las aplicaciones en la <i>lista</i>\?</string>
+    <string name="fapps_isolate_block_dialog_message">¿Aislar las aplicaciones de la <i>lista</i>\?</string>
+    <string name="lbl_apply" translatable="true">Aplicar</string>
+    <string name="lbl_all" translatable="true">Todos</string>
+    <string name="lbl_disabled" translatable="true">Desactivado</string>
+    <string name="lbl_domain" translatable="true">Dominio</string>
+    <string name="lbl_wildcard" translatable="true">Comodín</string>
+    <string name="lbl_action_required" translatable="true">Acción requerida</string>
+    <string name="lbl_ip_rules" translatable="true">Reglas IP</string>
+    <string name="lbl_domain_rules" translatable="true">Reglas del dominio</string>
+    <string name="lbl_dismiss" translatable="true">Salir</string>
+    <string name="lbl_allowed" translatable="true">Permitidas</string>
+    <string name="lbl_cancel" translatable="true">Cancelar</string>
+    <string name="lbl_blocked" translatable="true">Bloqueadas</string>
+    <string name="firewall_rule_trusted_domain" translatable="true">Dominio de confianza (App)</string>
+    <string name="firewall_rule_block_domain_desc" translatable="true">Una regla de cortafuegos establecida por el usuario bloqueaba el <i>dominio</i>.<br/><br/> Para cambiarla, vaya a la pantalla <i>Cortafuegos específico de la aplicación</i>.</string>
+    <string name="bsdl_block_desc" translatable="true">Bloquear, confiar en <u>este dominio</u></string>
+    <string name="firewall_rule_trusted_domain_desc" translatable="true">Esta conexión se permitió porque el <i>dominio</i> está configurado como Dominio de confianza.<br/><br/> Para cambiarlo, vaya a la pantalla <i>Cortafuegos específico de la aplicación</i>.</string>
+    <string name="cd_no_rules_text" translatable="true">No hay reglas de dominio.</string>
+    <string name="firewall_rule_block_domain" translatable="true">Dominio (App)</string>
+    <string name="lbl_rules" translatable="true">reglas</string>
+    <string name="lbl_configure" translatable="true">Configurar</string>
+    <string name="bypass_dns_firewall" translatable="true">omitir dns y cortafuegos</string>
+    <string name="settings_general_customize" translatable="true">personalizar</string>
+    <string name="settings_pcap_dialog_title" translatable="true">PCAP</string>
+    <string name="settings_pcap_dialog_option_1" translatable="true">Apagado (por defecto)</string>
+    <string name="settings_pcap_dialog_option_3" translatable="true">Enviar a la carpeta de Descargas</string>
+    <string name="rules_card_domain_count" translatable="true">%1$s regla(s) de dominio</string>
+    <string name="logs_card_network_count" translatable="true">%1$s conexiones</string>
+    <string name="logs_card_dns_count" translatable="true">%1$s consultas</string>
+    <string name="hsf_packet_capture_chip_text" translatable="true">Captura de paquetes activada</string>
+    <string name="cd_dns_alg_desc" translatable="true">Asignar una IP única por solicitud DNS</string>
+    <string name="firewall_rule_dns_blocked" translatable="true">DNS bloqueado</string>
+    <string name="firewall_rule_domain_blocked_univ" translatable="true">Dominio (Univ)</string>
+    <string name="firewall_rule_bypass_dns_firewall_desc" translatable="true">Se permitió esta conexión porque la <i>aplicación de origen</i> está configurada para <i>omitir las reglas de dns y cortafuegos</i>.<br/><br/> Para cambiar, vaya a la pantalla <i>Cortafuegos específico de la aplicación</i>.</string>
+    <string name="lbl_logs" translatable="true">registros</string>
+    <string name="bsct_block_domain" translatable="true">Bloquear, confiar en <u>dominio(s)</u> para <u>esta aplicación</u></string>
+    <string name="settings_default_dns_heading" translatable="true">Elegir DNS alternativo</string>
+    <string name="settings_pcap_heading" translatable="true">Captura de paquetes</string>
+    <string name="settings_default_dns_desc" translatable="true">En raras ocasiones, cuando no se puede determinar el DNS preferido por el usuario, se utiliza el DNS alternativo.</string>
+    <string name="firewall_card_universal_rules" translatable="true">%1$s regla(s) universal(es)</string>
+    <string name="pcap_failure_toast" translatable="true">Error al crear el archivo pcap, ¡Inténtalo de nuevo!</string>
+    <string name="settings_pcap_dialog_option_2" translatable="true">Salida a Logcat</string>
+    <string name="firewall_status_bypass_dns_firewall" translatable="true">omite las reglas de dns y cortafuegos</string>
+    <string name="hsf_packet_capture_chip_disabled_toast" translatable="true">Captura de paquetes desactivada</string>
+    <string name="fapps_bypass_dns_firewall_dialog_title" translatable="true">Omitir aplicaciones</string>
+    <string name="firewall_rule_bypass_dns_firewall" translatable="true">Aplicación omitida</string>
+    <string name="cd_dns_alg_heading" translatable="true">Filtrado DNS avanzado (experimental)</string>
+    <string name="fapps_bypass_dns_firewall_dialog_message" translatable="true">Omitir las reglas universales de DNS y cortafuegos para las aplicaciones de la <i>lista</i>\?</string>
+    <string name="firewall_rule_domain_trusted_univ" translatable="true">Dominio de confianza (Univ)</string>
+    <string name="firewall_rule_dns_blocked_desc" translatable="true">Esta conexión se bloqueó porque el <i>dominio</i> está bloqueado por el DNS preferido del usuario.<br/><br/> Para cambiar este comportamiento, vaya a la pestaña <i>Configurar DNS</i>.</string>
+    <string name="firewall_rule_domain_trusted_univ_desc" translatable="true">Esta conexión se permitió porque el <i>dominio</i> está configurado como confiable en las reglas de dominio universal.<br/><br/> Para cambiar este comportamiento, vaya a la pestaña <i>Configurar DNS</i>.</string>
+    <string name="firewall_rule_domain_blocked_univ_desc" translatable="true">Esta conexión se bloqueó porque el <i>dominio</i> está configurado como bloqueado en las reglas de dominio universal.<br/><br/> Para cambiar este comportamiento, vaya a la pestaña <i>Configurar DNS</i>.</string>
+    <string name="ada_app_status_bypass_dns_firewall" translatable="true">omitirá las reglas universales de dns y cortafuegos</string>
+    <string name="ada_app_firewall" translatable="true">Cortafuegos</string>
+    <string name="ada_app_bypass_dns_firewall" translatable="true">Omitir DNS y cortafuegos</string>
+    <string name="dc_refresh_toast" translatable="true">Actualización de DNS completada</string>
+    <string name="dc_setting_dns_cache_heading" translatable="true">Refuerzo DNS</string>
+    <string name="dc_setting_dns_cache_desc" translatable="true">Fusionar peticiones, respuestas en caché, gestión de errores resistentes</string>
+    <string name="settings_lock_down_proxy_desc" translatable="true">No se pueden configurar proxies cuando la VPN se ejecuta en modo sólo DNS.</string>
+    <string name="brbs_backup_restore_desc" translatable="true">No funciona en todas las versiones de la aplicación ni en todos los dispositivos</string>
+    <string name="settings_allow_lan_heading" translatable="true">No enrutar IPs privadas (experimental)</string>
+    <string name="settings_allow_lan_desc" translatable="true">Excluye las rutas LAN, loopback, multicast, enlace-local del túnel VPN de Rethink.</string>
+    <string name="trusted_domains_desc" translatable="true">La regla del dominio de confianza funciona mejor con el DNS de <u>Rethink</u>.</string>
+    <string name="lbl_network" translatable="true">red</string>
+    <string name="bypass_dns_firewall_tooltip">%1$s funciona sólo con el DNS de Rethink</string>
+    <string name="lbl_maybe_blocked" translatable="true">Posiblemente bloqueado</string>
+    <string name="lbl_very" translatable="true">muy</string>
+    <string name="lbl_app_wise" translatable="true">por aplicación</string>
+    <string name="lbl_qr_code" translatable="true">Código QR</string>
+    <string name="lbl_wireguard" translatable="true">WireGuard</string>
+    <string name="lbl_applications" translatable="true">Aplicaciones</string>
+    <string name="lbl_random" translatable="true">(aleatoria)</string>
+    <string name="lbl_mtu" translatable="true">MTU</string>
+    <string name="lbl_auto" translatable="true">(automático)</string>
+    <string name="lbl_import" translatable="true">Importar</string>
+    <string name="lbl_include" translatable="true">Incluir</string>
+    <string name="lbl_delete" translatable="true">Borrar</string>
+    <string name="lbl_generated" translatable="true">(generado)</string>
+    <string name="lbl_select_all" translatable="true">Seleccionar todo</string>
+    <string name="lbl_active" translatable="true">Activo</string>
+    <string name="lbl_inactive" translatable="true">Inactivo</string>
+    <string name="lbl_socks5" translatable="true">SOCKS5</string>
+    <string name="lbl_http" translatable="true">HTTP</string>
+    <string name="lbl_create" translatable="true">Crear</string>
+    <string name="lbl_addresses" translatable="true">Direcciones</string>
+    <string name="lbl_public_key" translatable="true">Clave pública</string>
+    <string name="lbl_dns_servers" translatable="true">Servidores DNS</string>
+    <string name="lbl_http_socks5" translatable="true">HTTPS y SOCKS5</string>
+    <string name="lbl_min" translatable="true">min</string>
+    <string name="lbl_hour" translatable="true">h</string>
+    <string name="lbl_day" translatable="true">día</string>
+    <string name="lbl_preshared_key" translatable="true">Clave compartida</string>
+    <string name="lbl_insecure" translatable="true">(inseguro)</string>
+    <string name="lbl_optional" translatable="true">(opcional)</string>
+    <string name="lbl_save" translatable="true">guardar</string>
+    <string name="http_proxy_dialog_desc" translatable="true">URL de configuración del formulario, &lt;protocol&gt;://&lt;username&gt;:&lt;password&gt;@&lt;domain-or-ip&gt;:&lt;port&gt;&lt;path&gt;. Por ejemplo: http://proxy.example.com:8080/</string>
+    <string name="search_proxy_add_apps" translatable="true">Buscar las aplicaciones por nombre</string>
+    <string name="lbl_fast" translatable="true">Rápido</string>
+    <string name="lbl_slow" translatable="true">Lento</string>
+    <string name="lbl_sec" translatable="true">s</string>
+    <string name="lbl_private_key" translatable="true">Clave privada</string>
+    <string name="lbl_persistent_keepalive" translatable="true">Keepalive persistente</string>
+    <string name="lbl_allowed_ips" translatable="true">IP permitidas</string>
+    <string name="status_protected_with_wg" translatable="true">protegido con wireguard</string>
+    <string name="status_protected_with_wg_private_dns" translatable="true">protegido con wireguard y dns privado</string>
+    <string name="public_key_copy_toast_msg" translatable="true">Clave pública copiada.</string>
+    <string name="orbot_explanation" translatable="true">Orbot es una aplicación proxy gratuita que permite a otras aplicaciones utilizar Internet de forma más <u>segura</u>.
+\nOrbot utiliza <u>Tor</u> para cifrar su tráfico de Internet, lo que le ayuda a <u>evitar la censura</u> y defenderse de las formas de <u>vigilancia de la red</u> que amenazan la libertad personal y la privacidad.
+\n<u>Proxy TCP</u>: Rethink reenvía a Orbot sólo las conexiones TCP de las aplicaciones <i>incluidas</i>.
+\n<u>Proxy HTTP</u>: Rethink <i>establece</i> un túnel de CONEXIÓN HTTP a Orbot y reenvía solo las conexiones TCP de las aplicaciones <i>incluidas</i>.</string>
+    <string name="lbl_listen_port" translatable="true">Escuchar el puerto</string>
+    <string name="logs_disclaimer" translatable="true">Mostrar los primeros 20.000 caracteres</string>
+    <string name="cd_doh_dialog_checkbox_desc" translatable="true">No validar los certificados TLS del servidor (habilitar sólo si sabes lo que está haciendo)</string>
+    <string name="bad_config_reason_unknown_section" translatable="true">Sección desconocida</string>
+    <string name="key_length_explanation_base64" translatable="true">: Las claves base64 de WireGuard deben tener 44 caracteres (32 bytes)</string>
+    <string name="univ_firewall_heading" translatable="true">Reglas universales para el cortafuegos</string>
+    <string name="app_ip_domain_rules" translatable="true">Reglas IP/Dominio por aplicación</string>
+    <string name="app_ip_domain_rules_desc" translatable="true">Modificar las reglas IP / Dominio por aplicación.</string>
+    <string name="fapps_info_bypass_dns_firewall_msg" translatable="true">Omitir las reglas DNS y el cortafuegos.</string>
+    <string name="ssv_most_blocked_countries_heading" description="This label will appear on the stats screen as a header for most blocked domains by country" translatable="true">países más bloqueados</string>
+    <string name="bad_config_reason_invalid_key" translatable="true">Clave no válida</string>
+    <string name="bad_config_reason_invalid_number" translatable="true">Número no válido</string>
+    <string name="bad_config_reason_invalid_value" translatable="true">Valor no válido</string>
+    <string name="bad_config_reason_missing_attribute" translatable="true">Falta el atributo</string>
+    <string name="bad_config_reason_missing_section" translatable="true">Falta una sección</string>
+    <string name="bad_config_reason_syntax_error" translatable="true">Error de sintaxis</string>
+    <string name="bad_config_reason_unknown_attribute" translatable="true">Atributo desconocido</string>
+    <string name="key_length_explanation_binary" translatable="true">: Las claves WireGuard deben ser de 32 bytes</string>
+    <string name="key_length_explanation_hex" translatable="true">: Las claves hexadecimales de WireGuard deben tener 64 caracteres (32 bytes)</string>
+    <string name="key_contents_error" translatable="true">Caracteres erróneos en la clave</string>
+    <string name="key_length_error" translatable="true">Longitud de clave incorrecta</string>
+    <string name="parse_error_inet_address" translatable="true">Direcciones IP</string>
+    <string name="cd_deleted_toast" translatable="true">Eliminadas todas las reglas de dominio</string>
+    <string name="firewall_rule_proxied_desc" translatable="true">Esta conexión se ha desviado al proxy preferido por el usuario.<br/><br/> Para cambiarlo vaya a <i>Proxy</i> en la pantalla <i>Configurar</i>.</string>
+    <string name="ssv_most_contacted_countries_heading" description="This label will appear on the stats screen as a header for most visited domains by country" translatable="true">países más contactados</string>
+    <string name="firewall_rule_proxied" translatable="true">Por proxy</string>
+    <string name="parse_error_integer" translatable="true">número</string>
+    <string name="bad_config_explanation_pka" translatable="true">: Debe ser positivo y no más de 65535</string>
+    <string name="parse_error_inet_endpoint" translatable="true">Punto final</string>
+    <string name="parse_error_inet_network" translatable="true">Red IP</string>
+    <string name="bad_config_explanation_positive_number" translatable="true">: Debe ser positivo</string>
+    <string name="bad_config_explanation_udp_port" translatable="true">: Debe ser un número de puerto UDP válido</string>
+    <string name="bad_config_context" translatable="true">%1$s es %2$s</string>
+    <string name="bad_config_error" translatable="true">%1$s en %2$s</string>
+    <string name="generic_error" translatable="true">Error “%s” desconocido</string>
+    <string name="parse_error_generic" translatable="true">cadena</string>
+    <string name="import_error" translatable="true">Imposible importar túnel: %s</string>
+    <string name="parse_error_reason" translatable="true">No se puede analizar %1$s “%2$s”</string>
+    <string name="illegal_filename_error" translatable="true">Nombre de archivo ilegal “%s”</string>
+    <string name="bad_extension_error" translatable="true">El archivo debe ser .conf o .zip</string>
+    <string name="unknown_error" translatable="true">Error desconocido</string>
+    <string name="no_configs_error" translatable="true">No se encontró ninguna configuración</string>
+    <string name="invalid_file_error" translatable="true">archivo no válido</string>
+    <string name="setup_wireguard" translatable="true">Configurar WireGuard</string>
+    <string name="wireguard_description" translatable="true">WireGuard como un proxy.</string>
+    <string name="new_warp_config_desc" translatable="true">Obtener la configuración WARP del servidor</string>
+    <string name="add_remove_apps" translatable="true">Añadir / Eliminar aplicaciones (%1$s aplicaciones)</string>
+    <string name="new_warp_error_toast" translatable="true">No se puede recuperar la configuración WARP</string>
+    <string name="new_warp_invalid_config_toast" translatable="true">Configuración WARP no válida</string>
+    <string name="config_delete_dialog_desc">¿Está seguro que quiere borrar esta configuración\?</string>
+    <string name="config_add_success_toast">Configuración añadida</string>
+    <string name="config_delete_dialog_title">Borrar la configuración</string>
+    <string name="config_delete_success_toast">Configuración eliminada</string>
+    <string name="include_all_app_wg_dialog_title">Incluir todas las aplicaciones</string>
+    <string name="add_peer" translatable="true">Añadir par</string>
+    <string name="exclude_all_app_wg_dialog_title">Excluir todas las aplicaciones</string>
+    <string name="exclude_all_app_wg_dialog_desc">¿Excluir todas las aplicaciones de este túnel\?</string>
+    <string name="wireguard_enabled_failure">Desactive otros proxies para habilitar WireGuard</string>
+    <string name="wireguard_no_config_msg">Sin configuraciones para WireGuard</string>
+    <string name="include_all_app_wg_dialog_desc">¿Tunelizar todas las aplicaciones a través de este túnel\?</string>
+    <string name="crypt_cleanbrowsing_family_desc" translatable="true">Bloquea el acceso a todos los sitios para adultos, pornográficos y explícitos. También bloquea los dominios proxy y VPN que se utilizan para eludir los filtros. Los sitios de contenido mixto (como Reddit) también están bloqueados. Google, Bing y Youtube se configuran en Modo Seguro.</string>
+    <string name="crypt_adguard_desc" translatable="true">Protege su dispositivo contra malware y mucho más.</string>
+    <string name="crypt_adguard_family_desc" translatable="true">Adguard DNS con búsqueda segura y bloqueo de contenidos para adultos.</string>
+    <string name="cloudflare_security_dns_desc" translatable="true">Bloquea contenido malicioso. Utiliza el punto final DNS 1.1.1.2 de Cloudflare.</string>
+    <string name="cloudflare_family_dns_desc" translatable="true">Bloquea el malware y el contenido para adultos. Utiliza el punto final DNS 1.1.1.3 de Cloudflare.</string>
+    <string name="google_dns_desc" translatable="true">No bloquea ninguna petición DNS. Utiliza el punto final DNS de Google.</string>
+    <string name="cleanbrowsing_family_dns_desc" translatable="true">El filtro familiar bloquea el acceso a todos los sitios para adultos, pornográficos y explícitos. También bloquea los dominios proxy y VPN que podrían utilizarse para eludir nuestros filtros. Los sitios de contenido mixto (como Reddit) también están bloqueados. Google, Bing y Youtube están configurados en modo seguro.</string>
+    <string name="cleanbrowsing_adult_dns_desc" translatable="true">El filtro para adultos bloquea el acceso a todos los sitios para adultos, pornográficos y explícitos. No bloquea proxys ni VPN, ni sitios de contenido mixto. Sitios como Reddit están permitidos. Google y Bing se configuran en Modo Seguro.</string>
+    <string name="quad9_dns_desc" translatable="true">Quad9 enruta sus consultas DNS a través de una red segura de servidores en todo el mundo.</string>
+    <string name="crypt_quad9_desc" translatable="true">Quad9 (anycast) no–dnssec/no–log/no–filter/ecs 9.9.9.12 – 149.112.112.12</string>
+    <string name="crypt_quad9_security_desc" translatable="true">Quad9 (anycast) dnssec/no–log/filter 9.9.9.9 – 149.112.112.9 – 149.112.112.112</string>
+    <string name="crypt_relay_france" translatable="true">Relé DNS anónimo alojado en París, Francia, proporcionado por https://cryptostrom.is/.</string>
+    <string name="crypt_relay_netherlands" translatable="true">Relé DNS anónimo alojado en los Países Bajos</string>
+    <string name="wireguard_connection_error">Problema al conectarse a la configuración de WireGuard</string>
+    <string name="wireguard_disclaimer">Esto es una versión experimental de WireGuard como el proxy TCP y UDP. Mientras que el tráfico DNS se reenvía a %1$s, el tráfico ICMP (por ejemplo: ping) se envía a una red subyacente.</string>
+    <string name="cloudflare_dns_desc" translatable="true">No bloquear ninguna petición DNS. Utiliza el punto final de la DNS 1.1.1.1 de Cloudflare.</string>
+    <string name="crypt_relay_sweden" translatable="true">Relé DNS anónimo alojado en Suecia proporcionado por https://cryptostrom.is/.</string>
+    <string name="crypt_relay_us" translatable="true">Relé DNS anónimo alojado en EE.UU. - Los Ángeles, CA proporcionado por https://cryptostrom.is/.</string>
+    <string name="crypt_relay_singapore" translatable="true">Relé DNS anónimo alojado en Singapur.</string>
+    <string name="settings_go_log_heading" translatable="true">Nivel de registro</string>
+    <string name="settings_go_log_desc" translatable="true">Para la depuración</string>
+    <string name="logs_card_duration" translatable="true">desde el %1$s</string>
+    <string name="wireguard_refresh_toast">Actualización de los proxies completada</string>
+</resources>

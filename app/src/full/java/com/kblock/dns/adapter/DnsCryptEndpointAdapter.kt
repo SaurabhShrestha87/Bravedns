@@ -1,0 +1,232 @@
+/*
+Copyright 2020 RethinkDNS and its authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package com.kblock.dns.adapter
+
+import android.content.Context
+import android.content.DialogInterface
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
+import com.kblock.dns.R
+import com.kblock.dns.data.AppConfig
+import com.kblock.dns.database.DnsCryptEndpoint
+import com.kblock.dns.databinding.DnsCryptEndpointListItemBinding
+import com.kblock.dns.util.UIUtils
+import com.kblock.dns.util.UIUtils.clipboardCopy
+import com.kblock.dns.util.Utilities
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+class DnsCryptEndpointAdapter(
+    private val context: Context,
+    val lifecycleOwner: LifecycleOwner,
+    private val appConfig: AppConfig
+) :
+    PagingDataAdapter<DnsCryptEndpoint, DnsCryptEndpointAdapter.DnsCryptEndpointViewHolder>(
+        DIFF_CALLBACK
+    ) {
+
+    companion object {
+        private val DIFF_CALLBACK =
+            object : DiffUtil.ItemCallback<DnsCryptEndpoint>() {
+
+                override fun areItemsTheSame(
+                    oldConnection: DnsCryptEndpoint,
+                    newConnection: DnsCryptEndpoint
+                ): Boolean {
+                    return (oldConnection.id == newConnection.id &&
+                        oldConnection.isSelected == newConnection.isSelected)
+                }
+
+                override fun areContentsTheSame(
+                    oldConnection: DnsCryptEndpoint,
+                    newConnection: DnsCryptEndpoint
+                ): Boolean {
+                    return (oldConnection.id == newConnection.id &&
+                        oldConnection.isSelected != newConnection.isSelected)
+                }
+            }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DnsCryptEndpointViewHolder {
+        val itemBinding =
+            DnsCryptEndpointListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        return DnsCryptEndpointViewHolder(itemBinding)
+    }
+
+    override fun onBindViewHolder(holder: DnsCryptEndpointViewHolder, position: Int) {
+        val dnsCryptEndpoint: DnsCryptEndpoint = getItem(position) ?: return
+        holder.update(dnsCryptEndpoint)
+    }
+
+    inner class DnsCryptEndpointViewHolder(private val b: DnsCryptEndpointListItemBinding) :
+        RecyclerView.ViewHolder(b.root) {
+
+        fun update(endpoint: DnsCryptEndpoint) {
+            displayDetails(endpoint)
+            setupClickListeners(endpoint)
+        }
+
+        private fun setupClickListeners(endpoint: DnsCryptEndpoint) {
+            b.root.setOnClickListener {
+                b.dnsCryptEndpointListActionImage.isChecked =
+                    !b.dnsCryptEndpointListActionImage.isChecked
+                updateDnsCryptDetails(endpoint)
+            }
+
+            b.dnsCryptEndpointListActionImage.setOnClickListener { updateDnsCryptDetails(endpoint) }
+
+            b.dnsCryptEndpointListInfoImage.setOnClickListener {
+                showExplanationOnImageClick(endpoint)
+            }
+        }
+
+        private fun displayDetails(endpoint: DnsCryptEndpoint) {
+            b.dnsCryptEndpointListUrlName.text = endpoint.dnsCryptName
+            b.dnsCryptEndpointListActionImage.isChecked = endpoint.isSelected
+
+            b.dnsCryptEndpointListUrlExplanation.text =
+                if (endpoint.isSelected) {
+                    context.getString(UIUtils.getDnsStatus()).replaceFirstChar(Char::titlecase)
+                } else {
+                    ""
+                }
+
+            if (endpoint.isDeletable()) {
+                b.dnsCryptEndpointListInfoImage.setImageDrawable(
+                    ContextCompat.getDrawable(context, R.drawable.ic_fab_uninstall)
+                )
+            } else {
+                b.dnsCryptEndpointListInfoImage.setImageDrawable(
+                    ContextCompat.getDrawable(context, R.drawable.ic_info)
+                )
+            }
+        }
+
+        private fun showExplanationOnImageClick(dnsCryptEndpoint: DnsCryptEndpoint) {
+            if (dnsCryptEndpoint.isDeletable()) showDeleteDialog(dnsCryptEndpoint.id)
+            else {
+                showDialogExplanation(
+                    dnsCryptEndpoint.dnsCryptName,
+                    dnsCryptEndpoint.dnsCryptURL,
+                    dnsCryptEndpoint.dnsCryptExplanation
+                )
+            }
+        }
+
+        private fun showDeleteDialog(id: Int) {
+            val builder = MaterialAlertDialogBuilder(context)
+            builder.setTitle(R.string.dns_crypt_custom_url_remove_dialog_title)
+            builder.setMessage(R.string.dns_crypt_url_remove_dialog_message)
+            builder.setCancelable(true)
+            builder.setPositiveButton(context.getString(R.string.lbl_delete)) { _, _ ->
+                deleteEndpoint(id)
+            }
+
+            builder.setNegativeButton(context.getString(R.string.lbl_cancel)) { _, _ -> }
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.setCancelable(true)
+            alertDialog.show()
+        }
+
+        private fun showDialogExplanation(title: String, url: String, message: String?) {
+            val builder = MaterialAlertDialogBuilder(context)
+            builder.setTitle(title)
+            if (message == null) builder.setMessage(url)
+            else builder.setMessage(url + "\n\n" + cryptDesc(message))
+            builder.setCancelable(true)
+            builder.setPositiveButton(context.getString(R.string.dns_info_positive)) {
+                dialogInterface,
+                _ ->
+                dialogInterface.dismiss()
+            }
+
+            builder.setNeutralButton(context.getString(R.string.dns_info_neutral)) {
+                _: DialogInterface,
+                _: Int ->
+                clipboardCopy(context, url, context.getString(R.string.copy_clipboard_label))
+                Utilities.showToastUiCentered(
+                    context,
+                    context.getString(R.string.info_dialog_url_copy_toast_msg),
+                    Toast.LENGTH_SHORT
+                )
+            }
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.setCancelable(true)
+            alertDialog.show()
+        }
+
+        private fun cryptDesc(message: String?): String {
+            if (message.isNullOrEmpty()) return ""
+
+            return try {
+                if (message.contains("R.string.")) {
+                    val m = message.substringAfter("R.string.")
+                    val resId: Int =
+                        context.resources.getIdentifier(m, "string", context.packageName)
+                    context.getString(resId)
+                } else {
+                    message
+                }
+            } catch (ignored: Exception) {
+                ""
+            }
+        }
+
+        private fun updateDnsCryptDetails(endpoint: DnsCryptEndpoint) {
+            io {
+                endpoint.isSelected = true
+                appConfig.handleDnscryptChanges(endpoint)
+            }
+        }
+
+        private fun deleteEndpoint(id: Int) {
+            io {
+                appConfig.deleteDnscryptEndpoint(id)
+                uiCtx {
+                    Toast.makeText(
+                            context,
+                            R.string.dns_crypt_url_remove_success,
+                            Toast.LENGTH_SHORT
+                        )
+                        .show()
+                }
+            }
+        }
+
+        private suspend fun uiCtx(f: suspend () -> Unit) {
+            withContext(Dispatchers.Main) { f() }
+        }
+
+        private fun io(f: suspend () -> Unit) {
+            lifecycleOwner.lifecycleScope.launch { withContext(Dispatchers.IO) { f() } }
+        }
+    }
+}

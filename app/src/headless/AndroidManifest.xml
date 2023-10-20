@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kblock.dns">
+
+    <permission
+        android:name="com.kblock.dns.CONTROL_VPN"
+        android:protectionLevel="normal" />
+
+    <application android:name=".RethinkDnsApplication">
+        <provider
+            android:name=".provider.ApplicationProvider"
+            android:authorities="com.kblock.dns.appprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.kblock.dns.CONTROL_VPN" />
+        <provider
+            android:name=".provider.BlocklistProvider"
+            android:authorities="com.kblock.dns.blocklistprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.kblock.dns.CONTROL_VPN" />
+        <provider
+            android:name=".provider.DomainRuleProvider"
+            android:authorities="com.kblock.dns.domainrulesprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.kblock.dns.CONTROL_VPN" />
+
+        <receiver
+            android:name=".receiver.BraveStartReceiver"
+            android:exported="true"
+            android:permission="com.kblock.dns.CONTROL_VPN">
+            <intent-filter>
+                <action android:name="com.kblock.dns.intent.action.START_VPN" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

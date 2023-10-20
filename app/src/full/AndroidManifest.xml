@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application android:name=".RethinkDnsApplication"
+        android:theme="@style/AppThemeInitial">
+        <meta-data
+            android:name="android.webkit.WebView.MetricsOptOut"
+            android:value="true" />
+
+        <activity
+            android:name=".ui.FirewallActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.HomeScreenActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.rbk" />
+                <data android:host="*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.DnsDetailActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:finishOnTaskLaunch="true"
+            android:noHistory="true" />
+        <activity
+            android:name=".ui.AppInfoActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.PauseActivity"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".ui.DnsListActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.CustomRulesActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.ConfigureRethinkBasicActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.ProxySettingsActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.MiscSettingsActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.TunnelSettingsActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.AppListActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.DetailedStatisticsActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.NetworkLogsActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.WgMainActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.WgConfigEditorActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.WgConfigDetailActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.CheckoutActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.TcpProxyMainActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.UniversalFirewallSettingsActivity"
+            android:finishOnTaskLaunch="true" />
+        <activity
+            android:name=".ui.NotificationHandlerDialog"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
+            android:theme="@style/AppThemeDialog" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+
+        <receiver
+            android:name=".receiver.BraveAutoStartReceiver"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.NotificationActionReceiver"
+            android:label="@string/app_name" />
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+
+        <service
+            android:name=".util.BackgroundAccessibilityService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.kblock.dns.provider;com.kblock.dns.backup.BackupAgent"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+    </application>
+</manifest>
